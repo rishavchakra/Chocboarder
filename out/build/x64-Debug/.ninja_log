@@ -1,0 +1,21 @@
+# ninja log v5
+8	1259	633649727	lib/GLFW/src/CMakeFiles/glfw.dir/context.c.obj	b989d9031db9cc9
+11	1558	633649728	lib/GLFW/src/CMakeFiles/glfw.dir/monitor.c.obj	9571096bb982605d
+12	1660	633649728	lib/GLFW/src/CMakeFiles/glfw.dir/vulkan.c.obj	69c53a2865d968d9
+9	1669	633649728	lib/GLFW/src/CMakeFiles/glfw.dir/init.c.obj	9304497eeb46b624
+1260	2361	633649728	lib/GLFW/src/CMakeFiles/glfw.dir/input.c.obj	dbee9b1f45b22a2f
+1558	2446	633649729	lib/GLFW/src/CMakeFiles/glfw.dir/window.c.obj	10d31b3bbc22c0ad
+1660	2547	633649729	lib/GLFW/src/CMakeFiles/glfw.dir/win32_joystick.c.obj	d0f56a50b44ab648
+1894	2559	633649729	lib/GLFW/src/CMakeFiles/glfw.dir/win32_monitor.c.obj	5e959c4951041603
+2361	2773	633649729	lib/GLFW/src/CMakeFiles/glfw.dir/win32_init.c.obj	9b0321f38f930149
+2446	2868	633649729	lib/GLFW/src/CMakeFiles/glfw.dir/win32_window.c.obj	6315360e1673a10e
+2547	3019	633649729	lib/GLFW/src/CMakeFiles/glfw.dir/win32_thread.c.obj	923beb30fbfca8c1
+2559	3064	633649729	lib/GLFW/src/CMakeFiles/glfw.dir/wgl_context.c.obj	88180fb223ee4348
+2773	3272	633649729	lib/GLFW/src/CMakeFiles/glfw.dir/win32_time.c.obj	6ad70e87f33c7101
+2868	3380	633649729	lib/GLFW/src/CMakeFiles/glfw.dir/osmesa_context.c.obj	9e5a1152e3032d82
+3019	3536	633649730	lib/GLFW/src/CMakeFiles/glfw.dir/egl_context.c.obj	e9151f9b6b6c2f73
+3536	3864	633649730	lib/GLFW/src/glfw3.lib	2afcb92dab271005
+0	4155	633649730	CMakeFiles/Chocboarder.dir/src/cApp.cpp.obj	5d6bb6d4e8eb9311
+6	4261	633649730	CMakeFiles/Chocboarder.dir/src/cMain.cpp.obj	592cd861f0fb4226
+2	1791	633649821	CMakeFiles/Chocboarder.dir/src/cMain.cpp.obj	592cd861f0fb4226
+2	6207	633652683	Chocboarder.exe	2ff185f401ea2127
