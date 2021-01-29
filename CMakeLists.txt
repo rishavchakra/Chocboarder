@@ -27,11 +27,11 @@ set(window_headers
 		)
 
 set(additional_dependencies
-		lib/GLAD/src/glad.c src/cApp.cpp src/cApp.h)
+		lib/GLAD/src/glad.c src/cApp.cpp include/cApp.h)
 
 #[[         Adding executables          ]]
 add_executable(Chocboarder WIN32
-		src/cApp.cpp src/cApp.h
+		src/cApp.cpp include/cApp.h
 #		${graphics_source}
 #		${graphics_headers}
 #
@@ -39,7 +39,7 @@ add_executable(Chocboarder WIN32
 #		${window_headers}
 #
 #		${additional_dependencies}
-		src/cMain.cpp src/cMain.h)
+		src/cMain.cpp include/cMain.h)
 
 #Include project directories
 include_directories(include)
