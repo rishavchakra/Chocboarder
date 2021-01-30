@@ -5,24 +5,31 @@
 
 #include "wx/colour.h"
 
-//Defining Menu 
-#define ID_MENU_NEW 1
-#define ID_MENU_OPEN 2
-#define ID_MENU_SAVE 3
-#define ID_MENU_EXIT 4
-
-
-enum UI {
-	LIST_BUTTON,
-	ButtonTop
+//wxIDs for all buttons and commands
+enum ID {
+	MenuFileNew = wxID_HIGHEST + 1,
+	MenuFileOpen,
+	MenuFileSave,
+	MenuFileExit,
+	MenuEditUndo,
+	MenuEditRedo,
+	MenuEditPrefs,
+	MenuToolBrush,
+	MenuToolEraser,
+	MenuToolShading,
+	MenuToolFill,
+	MenuHelpShortcuts,
 };
 
+//Global wxColours for all the UI colors
 namespace Colors {
 	static const wxColour primary_bg = wxColour(40, 40, 40);
 	static const wxColour button_bg = wxColour(80, 80, 80);
 	static const wxColour button_fg = wxColour(220, 220, 220);
 }
 
+//TODO: convert every UI string to a global string constant
+//Global strings for all the menus and toolbars
 namespace Strings {
 }
 
