@@ -5,6 +5,7 @@
 
 #include "wx/wx.h"
 #include "cMain.h"
+#include "misc/values.hpp"
 
 class cApp : public wxApp {
 public:

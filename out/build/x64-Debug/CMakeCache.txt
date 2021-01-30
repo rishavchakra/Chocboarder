@@ -93,8 +93,8 @@ CMAKE_INSTALL_DATAROOTDIR:PATH=share
 //Documentation root (DATAROOTDIR/doc/PROJECT_NAME)
 CMAKE_INSTALL_DOCDIR:PATH=
 
-//C header files (include)
-CMAKE_INSTALL_INCLUDEDIR:PATH=include
+//C header files (misc)
+CMAKE_INSTALL_INCLUDEDIR:PATH=misc
 
 //Info documentation (DATAROOTDIR/info)
 CMAKE_INSTALL_INFODIR:PATH=
@@ -114,8 +114,8 @@ CMAKE_INSTALL_LOCALSTATEDIR:PATH=var
 //Man documentation (DATAROOTDIR/man)
 CMAKE_INSTALL_MANDIR:PATH=
 
-//C header files for non-gcc (/usr/include)
-CMAKE_INSTALL_OLDINCLUDEDIR:PATH=/usr/include
+//C header files for non-gcc (/usr/misc)
+CMAKE_INSTALL_OLDINCLUDEDIR:PATH=/usr/misc
 
 //No help, variable specified on the command line.
 CMAKE_INSTALL_PREFIX:PATH=D:/Code/C++/ChocBoarder/out/install/x64-Debug
@@ -531,7 +531,7 @@ CMAKE_GENERATOR_INSTANCE:INTERNAL=
 CMAKE_GENERATOR_PLATFORM:INTERNAL=
 //Name of generator toolset.
 CMAKE_GENERATOR_TOOLSET:INTERNAL=
-//Have include pthread.h
+//Have misc pthread.h
 CMAKE_HAVE_PTHREAD_H:INTERNAL=
 //Source directory with the top level CMakeLists.txt file for this
 // project
@@ -630,7 +630,7 @@ CMAKE_VERBOSE_MAKEFILE-ADVANCED:INTERNAL=1
 //Details about finding Threads
 FIND_PACKAGE_MESSAGE_DETAILS_Threads:INTERNAL=[TRUE][v()]
 //Details about finding wxWidgets
-FIND_PACKAGE_MESSAGE_DETAILS_wxWidgets:INTERNAL=[debug;D:/Code/C++/Libraries/GUI/wxWidgets-3.1.4/lib/vc_x64_lib/wxmsw31ud_gl.lib;optimized;D:/Code/C++/Libraries/GUI/wxWidgets-3.1.4/lib/vc_x64_lib/wxmsw31u_gl.lib;debug;D:/Code/C++/Libraries/GUI/wxWidgets-3.1.4/lib/vc_x64_lib/wxmsw31ud_core.lib;optimized;D:/Code/C++/Libraries/GUI/wxWidgets-3.1.4/lib/vc_x64_lib/wxmsw31u_core.lib;debug;D:/Code/C++/Libraries/GUI/wxWidgets-3.1.4/lib/vc_x64_lib/wxbase31ud.lib;optimized;D:/Code/C++/Libraries/GUI/wxWidgets-3.1.4/lib/vc_x64_lib/wxbase31u.lib;debug;D:/Code/C++/Libraries/GUI/wxWidgets-3.1.4/lib/vc_x64_lib/wxpngd.lib;optimized;D:/Code/C++/Libraries/GUI/wxWidgets-3.1.4/lib/vc_x64_lib/wxpng.lib;debug;D:/Code/C++/Libraries/GUI/wxWidgets-3.1.4/lib/vc_x64_lib/wxtiffd.lib;optimized;D:/Code/C++/Libraries/GUI/wxWidgets-3.1.4/lib/vc_x64_lib/wxtiff.lib;debug;D:/Code/C++/Libraries/GUI/wxWidgets-3.1.4/lib/vc_x64_lib/wxjpegd.lib;optimized;D:/Code/C++/Libraries/GUI/wxWidgets-3.1.4/lib/vc_x64_lib/wxjpeg.lib;debug;D:/Code/C++/Libraries/GUI/wxWidgets-3.1.4/lib/vc_x64_lib/wxzlibd.lib;optimized;D:/Code/C++/Libraries/GUI/wxWidgets-3.1.4/lib/vc_x64_lib/wxzlib.lib;debug;D:/Code/C++/Libraries/GUI/wxWidgets-3.1.4/lib/vc_x64_lib/wxregexud.lib;optimized;D:/Code/C++/Libraries/GUI/wxWidgets-3.1.4/lib/vc_x64_lib/wxregexu.lib;debug;D:/Code/C++/Libraries/GUI/wxWidgets-3.1.4/lib/vc_x64_lib/wxexpatd.lib;optimized;D:/Code/C++/Libraries/GUI/wxWidgets-3.1.4/lib/vc_x64_lib/wxexpat.lib;opengl32;glu32;winmm;comctl32;uuid;oleacc;uxtheme;rpcrt4;shlwapi;version;wsock32][D:/Code/C++/Libraries/GUI/wxWidgets-3.1.4/lib/vc_x64_lib/mswu;D:/Code/C++/Libraries/GUI/wxWidgets-3.1.4/include][cfound components: gl core base png tiff jpeg zlib regex expat ][v3.1.4()]
+FIND_PACKAGE_MESSAGE_DETAILS_wxWidgets:INTERNAL=[debug;D:/Code/C++/Libraries/GUI/wxWidgets-3.1.4/lib/vc_x64_lib/wxmsw31ud_gl.lib;optimized;D:/Code/C++/Libraries/GUI/wxWidgets-3.1.4/lib/vc_x64_lib/wxmsw31u_gl.lib;debug;D:/Code/C++/Libraries/GUI/wxWidgets-3.1.4/lib/vc_x64_lib/wxmsw31ud_core.lib;optimized;D:/Code/C++/Libraries/GUI/wxWidgets-3.1.4/lib/vc_x64_lib/wxmsw31u_core.lib;debug;D:/Code/C++/Libraries/GUI/wxWidgets-3.1.4/lib/vc_x64_lib/wxbase31ud.lib;optimized;D:/Code/C++/Libraries/GUI/wxWidgets-3.1.4/lib/vc_x64_lib/wxbase31u.lib;debug;D:/Code/C++/Libraries/GUI/wxWidgets-3.1.4/lib/vc_x64_lib/wxpngd.lib;optimized;D:/Code/C++/Libraries/GUI/wxWidgets-3.1.4/lib/vc_x64_lib/wxpng.lib;debug;D:/Code/C++/Libraries/GUI/wxWidgets-3.1.4/lib/vc_x64_lib/wxtiffd.lib;optimized;D:/Code/C++/Libraries/GUI/wxWidgets-3.1.4/lib/vc_x64_lib/wxtiff.lib;debug;D:/Code/C++/Libraries/GUI/wxWidgets-3.1.4/lib/vc_x64_lib/wxjpegd.lib;optimized;D:/Code/C++/Libraries/GUI/wxWidgets-3.1.4/lib/vc_x64_lib/wxjpeg.lib;debug;D:/Code/C++/Libraries/GUI/wxWidgets-3.1.4/lib/vc_x64_lib/wxzlibd.lib;optimized;D:/Code/C++/Libraries/GUI/wxWidgets-3.1.4/lib/vc_x64_lib/wxzlib.lib;debug;D:/Code/C++/Libraries/GUI/wxWidgets-3.1.4/lib/vc_x64_lib/wxregexud.lib;optimized;D:/Code/C++/Libraries/GUI/wxWidgets-3.1.4/lib/vc_x64_lib/wxregexu.lib;debug;D:/Code/C++/Libraries/GUI/wxWidgets-3.1.4/lib/vc_x64_lib/wxexpatd.lib;optimized;D:/Code/C++/Libraries/GUI/wxWidgets-3.1.4/lib/vc_x64_lib/wxexpat.lib;opengl32;glu32;winmm;comctl32;uuid;oleacc;uxtheme;rpcrt4;shlwapi;version;wsock32][D:/Code/C++/Libraries/GUI/wxWidgets-3.1.4/lib/vc_x64_lib/mswu;D:/Code/C++/Libraries/GUI/wxWidgets-3.1.4/misc][cfound components: gl core base png tiff jpeg zlib regex expat ][v3.1.4()]
 //wxWidgets_LIB_DIR
 WX_LIB_DIR:INTERNAL=D:/Code/C++/Libraries/GUI/wxWidgets-3.1.4/lib/vc_x64_lib
 //wxWidgets_ROOT_DIR

@@ -197,7 +197,7 @@ if (_GLFW_X11)
 
     list(APPEND glfw_PKG_DEPS "x11")
 
-    # Set up library and include paths
+    # Set up library and misc paths
     list(APPEND glfw_INCLUDE_DIRS "${X11_X11_INCLUDE_PATH}")
     list(APPEND glfw_LIBRARIES "${X11_X11_LIB}" "${CMAKE_THREAD_LIBS_INIT}")
 

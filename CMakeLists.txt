@@ -22,43 +22,60 @@ set(graphics_headers
 		)
 
 set(window_source
+		src/Window/cApp.cpp
+		src/Window/cMain.cpp
 		)
 set(window_headers
-		)
+		src/Window/headers/cApp.h
+		src/Window/headers/cMain.h)
 
 set(additional_dependencies
-		lib/GLAD/src/glad.c src/cApp.cpp include/cApp.h)
+#		lib/GLAD/src/glad.c
+		
+		src/misc/values.hpp
+		)
 
 #[[         Adding executables          ]]
 add_executable(Chocboarder WIN32
-		src/cApp.cpp include/cApp.h
 #		${graphics_source}
 #		${graphics_headers}
 #
-#		${window_source}
-#		${window_headers}
+		${window_source}
+		${window_headers}
 #
-#		${additional_dependencies}
-		src/cMain.cpp include/cMain.h)
+		${additional_dependencies}
+		)
 
 #Include project directories
-include_directories(include)
+include_directories(src)
 
 #[[         External libraries          ]]
+
+set(BUILD_GLFW false)
+set(BUILD_GLEW false)
+set(BUILD_WX true)
+
 #           GLFW OpenGL Framework
-set(GLFW_BUILD_DOCS OFF CACHE BOOL "" FORCE)
-set(GLFW_BUILD_TESTS OFF CACHE BOOL "" FORCE)
-set(GLFW_BUILD_EXAMPLES OFF CACHE BOOL "" FORCE)
-add_subdirectory(lib/GLFW)
-include_directories(lib/GLFW/include)
-target_link_libraries(Chocboarder glfw)
+if(BUILD_GLFW)
+	DBG_SAY("Building GLFW OpenGL library from source...")
+	
+	set(GLFW_BUILD_DOCS OFF CACHE BOOL "" FORCE)
+	set(GLFW_BUILD_TESTS OFF CACHE BOOL "" FORCE)
+	set(GLFW_BUILD_EXAMPLES OFF CACHE BOOL "" FORCE)
+	add_subdirectory(lib/GLFW)
+	include_directories(lib/GLFW/include)
+	target_link_libraries(Chocboarder glfw)
+else(BUILD_GLFW)
+	DBG_SAY("Not building GLFW OpenGL framework, may cause errors")
+endif(BUILD_GLFW)
 
 #           GLAD OpenGL extension library
 include_directories(lib/GLAD/include)
 
 #           GLEW OpenGL extension library
-set(USING_GLEW false)
-if(USING_GLEW)
+if(BUILD_GLEW)
+	DBG_SAY("Building GLEW OpenGL Extension library...")
+	
 	set(GLEW_USE_STATIC_LIBS true)
 	set(GLEW_VERBOSE true)
 	find_package(GLEW REQUIRED)
@@ -69,18 +86,24 @@ if(USING_GLEW)
 		message(FATAL_ERROR "GlEW OpenGL Extension Library not found
 		Fix FindGLEW.cmake in [CMake]/share/cmakeXXX/Modules. Add your filepath to the built libraries in the PATHS of any find_path()")
 	endif(GLEW_FOUND)
-else(USING_GLEW)
-	DBG_SAY("Not using GLEW OpenGL Extension Library")
-endif()
+else(BUILD_GLEW)
+	DBG_SAY("Not building GLEW OpenGL Extension Library, may cause errors")
+endif(BUILD_GLEW)
 
 #           wxWidgets GUI library
-set(wxWidgets_CONFIGURATION mswd)
-set(wxWidgets_USE_STATIC ON)
-find_package(wxWidgets COMPONENTS gl core base REQUIRED)
-if(wxWidgets_FOUND)
-	include(${wxWidgets_USE_FILE})
-	target_link_libraries(Chocboarder ${wxWidgets_LIBRARIES})
-else(wxWidgets_FOUND)
-	message(FATAL_ERROR "wxWidgets not found!
-	Fix FindwxWidgets.cmake in [CMake]/share/cmakeXXX/Modules. Add filepaths to wxwidgets include, library, and root in the PATHS of any find_path()")
-endif(wxWidgets_FOUND)
+if(BUILD_WX)
+	DBG_SAY("Building wxWidgets GUI library...")
+	
+	set(wxWidgets_CONFIGURATION mswd)
+	set(wxWidgets_USE_STATIC ON)
+	find_package(wxWidgets COMPONENTS gl core base REQUIRED)
+	if(wxWidgets_FOUND)
+		include(${wxWidgets_USE_FILE})
+		target_link_libraries(Chocboarder ${wxWidgets_LIBRARIES})
+	else(wxWidgets_FOUND)
+		message(FATAL_ERROR "wxWidgets not found!
+		Fix FindwxWidgets.cmake in [CMake]/share/cmakeXXX/Modules. Add filepaths to wxwidgets include, library, and root in the PATHS of any find_path()")
+	endif(wxWidgets_FOUND)
+else(BUILD_WX)
+	DBG_SAY("Not building wxWidgets GUI library, may cause errors")
+endif(BUILD_WX)

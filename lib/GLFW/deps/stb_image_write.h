@@ -22,7 +22,7 @@ ABOUT:
 
 BUILDING:
 
-   You can #define STBIW_ASSERT(x) before the #include to avoid using assert.h.
+   You can #define STBIW_ASSERT(x) before the #misc to avoid using assert.h.
    You can #define STBIW_MALLOC(), STBIW_REALLOC(), and STBIW_FREE() to replace
    malloc,realloc,free.
    You can define STBIW_MEMMOVE() to replace memmove()
@@ -158,13 +158,13 @@ STBIWDEF int stbi_write_hdr_to_func(stbi_write_func *func, void *context, int w,
 #endif
 
 #ifndef STBI_WRITE_NO_STDIO
-#include <stdio.h>
+#misc <stdio.h>
 #endif // STBI_WRITE_NO_STDIO
 
-#include <stdarg.h>
-#include <stdlib.h>
-#include <string.h>
-#include <math.h>
+#misc <stdarg.h>
+#misc <stdlib.h>
+#misc <string.h>
+#misc <math.h>
 
 #if defined(STBIW_MALLOC) && defined(STBIW_FREE) && (defined(STBIW_REALLOC) || defined(STBIW_REALLOC_SIZED))
 // ok
@@ -191,7 +191,7 @@ STBIWDEF int stbi_write_hdr_to_func(stbi_write_func *func, void *context, int w,
 
 
 #ifndef STBIW_ASSERT
-#include <assert.h>
+#misc <assert.h>
 #define STBIW_ASSERT(x) assert(x)
 #endif
 

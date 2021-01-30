@@ -36,23 +36,23 @@ include rules.ninja
 #############################################
 # Order-only phony target for Chocboarder
 
-build cmake_object_order_depends_target_Chocboarder: phony || cmake_object_order_depends_target_glfw
+build cmake_object_order_depends_target_Chocboarder: phony || CMakeFiles\Chocboarder.dir
 
-build CMakeFiles\Chocboarder.dir\src\cApp.cpp.obj: CXX_COMPILER__Chocboarder ..\..\..\src\cApp.cpp || cmake_object_order_depends_target_Chocboarder
+build CMakeFiles\Chocboarder.dir\src\Window\cApp.cpp.obj: CXX_COMPILER__Chocboarder ..\..\..\src\Window\cApp.cpp || cmake_object_order_depends_target_Chocboarder
   DEFINES = -DUNICODE -D_UNICODE
   FLAGS = /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -MDd   -std:c++14
-  INCLUDES = -I..\..\..\include -I..\..\..\lib\GLFW\include -I..\..\..\lib\GLAD\include -ID:\Code\C++\Libraries\GUI\wxWidgets-3.1.4\lib\vc_lib\mswu -ID:\Code\C++\Libraries\GUI\wxWidgets-3.1.4\include
+  INCLUDES = -I..\..\..\src -I..\..\..\lib\GLAD\include -ID:\Code\C++\Libraries\GUI\wxWidgets-3.1.4\lib\vc_lib\mswu -ID:\Code\C++\Libraries\GUI\wxWidgets-3.1.4\include
   OBJECT_DIR = CMakeFiles\Chocboarder.dir
-  OBJECT_FILE_DIR = CMakeFiles\Chocboarder.dir\src
+  OBJECT_FILE_DIR = CMakeFiles\Chocboarder.dir\src\Window
   TARGET_COMPILE_PDB = CMakeFiles\Chocboarder.dir\
   TARGET_PDB = Chocboarder.pdb
 
-build CMakeFiles\Chocboarder.dir\src\cMain.cpp.obj: CXX_COMPILER__Chocboarder ..\..\..\src\cMain.cpp || cmake_object_order_depends_target_Chocboarder
+build CMakeFiles\Chocboarder.dir\src\Window\cMain.cpp.obj: CXX_COMPILER__Chocboarder ..\..\..\src\Window\cMain.cpp || cmake_object_order_depends_target_Chocboarder
   DEFINES = -DUNICODE -D_UNICODE
   FLAGS = /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -MDd   -std:c++14
-  INCLUDES = -I..\..\..\include -I..\..\..\lib\GLFW\include -I..\..\..\lib\GLAD\include -ID:\Code\C++\Libraries\GUI\wxWidgets-3.1.4\lib\vc_lib\mswu -ID:\Code\C++\Libraries\GUI\wxWidgets-3.1.4\include
+  INCLUDES = -I..\..\..\src -I..\..\..\lib\GLAD\include -ID:\Code\C++\Libraries\GUI\wxWidgets-3.1.4\lib\vc_lib\mswu -ID:\Code\C++\Libraries\GUI\wxWidgets-3.1.4\include
   OBJECT_DIR = CMakeFiles\Chocboarder.dir
-  OBJECT_FILE_DIR = CMakeFiles\Chocboarder.dir\src
+  OBJECT_FILE_DIR = CMakeFiles\Chocboarder.dir\src\Window
   TARGET_COMPILE_PDB = CMakeFiles\Chocboarder.dir\
   TARGET_PDB = Chocboarder.pdb
 
@@ -64,10 +64,10 @@ build CMakeFiles\Chocboarder.dir\src\cMain.cpp.obj: CXX_COMPILER__Chocboarder ..
 #############################################
 # Link the executable Chocboarder.exe
 
-build Chocboarder.exe: CXX_EXECUTABLE_LINKER__Chocboarder CMakeFiles\Chocboarder.dir\src\cApp.cpp.obj CMakeFiles\Chocboarder.dir\src\cMain.cpp.obj | lib\GLFW\src\glfw3.lib D$:\Code\C++\Libraries\GUI\wxWidgets-3.1.4\lib\vc_lib\wxmsw31ud_gl.lib D$:\Code\C++\Libraries\GUI\wxWidgets-3.1.4\lib\vc_lib\wxmsw31ud_core.lib D$:\Code\C++\Libraries\GUI\wxWidgets-3.1.4\lib\vc_lib\wxbase31ud.lib D$:\Code\C++\Libraries\GUI\wxWidgets-3.1.4\lib\vc_lib\wxpngd.lib D$:\Code\C++\Libraries\GUI\wxWidgets-3.1.4\lib\vc_lib\wxtiffd.lib D$:\Code\C++\Libraries\GUI\wxWidgets-3.1.4\lib\vc_lib\wxjpegd.lib D$:\Code\C++\Libraries\GUI\wxWidgets-3.1.4\lib\vc_lib\wxzlibd.lib D$:\Code\C++\Libraries\GUI\wxWidgets-3.1.4\lib\vc_lib\wxregexud.lib D$:\Code\C++\Libraries\GUI\wxWidgets-3.1.4\lib\vc_lib\wxexpatd.lib || lib\GLFW\src\glfw3.lib
+build Chocboarder.exe: CXX_EXECUTABLE_LINKER__Chocboarder CMakeFiles\Chocboarder.dir\src\Window\cApp.cpp.obj CMakeFiles\Chocboarder.dir\src\Window\cMain.cpp.obj | D$:\Code\C++\Libraries\GUI\wxWidgets-3.1.4\lib\vc_lib\wxmsw31ud_gl.lib D$:\Code\C++\Libraries\GUI\wxWidgets-3.1.4\lib\vc_lib\wxmsw31ud_core.lib D$:\Code\C++\Libraries\GUI\wxWidgets-3.1.4\lib\vc_lib\wxbase31ud.lib D$:\Code\C++\Libraries\GUI\wxWidgets-3.1.4\lib\vc_lib\wxpngd.lib D$:\Code\C++\Libraries\GUI\wxWidgets-3.1.4\lib\vc_lib\wxtiffd.lib D$:\Code\C++\Libraries\GUI\wxWidgets-3.1.4\lib\vc_lib\wxjpegd.lib D$:\Code\C++\Libraries\GUI\wxWidgets-3.1.4\lib\vc_lib\wxzlibd.lib D$:\Code\C++\Libraries\GUI\wxWidgets-3.1.4\lib\vc_lib\wxregexud.lib D$:\Code\C++\Libraries\GUI\wxWidgets-3.1.4\lib\vc_lib\wxexpatd.lib
   FLAGS = /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -MDd
   LINK_FLAGS = /machine:X86 /debug /INCREMENTAL /subsystem:windows
-  LINK_LIBRARIES = lib\GLFW\src\glfw3.lib  D:\Code\C++\Libraries\GUI\wxWidgets-3.1.4\lib\vc_lib\wxmsw31ud_gl.lib  D:\Code\C++\Libraries\GUI\wxWidgets-3.1.4\lib\vc_lib\wxmsw31ud_core.lib  D:\Code\C++\Libraries\GUI\wxWidgets-3.1.4\lib\vc_lib\wxbase31ud.lib  D:\Code\C++\Libraries\GUI\wxWidgets-3.1.4\lib\vc_lib\wxpngd.lib  D:\Code\C++\Libraries\GUI\wxWidgets-3.1.4\lib\vc_lib\wxtiffd.lib  D:\Code\C++\Libraries\GUI\wxWidgets-3.1.4\lib\vc_lib\wxjpegd.lib  D:\Code\C++\Libraries\GUI\wxWidgets-3.1.4\lib\vc_lib\wxzlibd.lib  D:\Code\C++\Libraries\GUI\wxWidgets-3.1.4\lib\vc_lib\wxregexud.lib  D:\Code\C++\Libraries\GUI\wxWidgets-3.1.4\lib\vc_lib\wxexpatd.lib  opengl32.lib  glu32.lib  winmm.lib  comctl32.lib  uuid.lib  oleacc.lib  uxtheme.lib  rpcrt4.lib  shlwapi.lib  version.lib  wsock32.lib  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib
+  LINK_LIBRARIES = D:\Code\C++\Libraries\GUI\wxWidgets-3.1.4\lib\vc_lib\wxmsw31ud_gl.lib  D:\Code\C++\Libraries\GUI\wxWidgets-3.1.4\lib\vc_lib\wxmsw31ud_core.lib  D:\Code\C++\Libraries\GUI\wxWidgets-3.1.4\lib\vc_lib\wxbase31ud.lib  D:\Code\C++\Libraries\GUI\wxWidgets-3.1.4\lib\vc_lib\wxpngd.lib  D:\Code\C++\Libraries\GUI\wxWidgets-3.1.4\lib\vc_lib\wxtiffd.lib  D:\Code\C++\Libraries\GUI\wxWidgets-3.1.4\lib\vc_lib\wxjpegd.lib  D:\Code\C++\Libraries\GUI\wxWidgets-3.1.4\lib\vc_lib\wxzlibd.lib  D:\Code\C++\Libraries\GUI\wxWidgets-3.1.4\lib\vc_lib\wxregexud.lib  D:\Code\C++\Libraries\GUI\wxWidgets-3.1.4\lib\vc_lib\wxexpatd.lib  opengl32.lib  glu32.lib  winmm.lib  comctl32.lib  uuid.lib  oleacc.lib  uxtheme.lib  rpcrt4.lib  shlwapi.lib  version.lib  wsock32.lib  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib
   OBJECT_DIR = CMakeFiles\Chocboarder.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
@@ -75,30 +75,6 @@ build Chocboarder.exe: CXX_EXECUTABLE_LINKER__Chocboarder CMakeFiles\Chocboarder
   TARGET_FILE = Chocboarder.exe
   TARGET_IMPLIB = Chocboarder.lib
   TARGET_PDB = Chocboarder.pdb
-
-
-#############################################
-# Utility command for install/local
-
-build CMakeFiles\install\local.util: CUSTOM_COMMAND all
-  COMMAND = cmd.exe /C "cd /D D:\Code\C++\ChocBoarder\out\build\x86-Debug && D:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake"
-  DESC = Installing only the local directory...
-  pool = console
-  restat = 1
-
-build install\local: phony CMakeFiles\install\local.util
-
-
-#############################################
-# Utility command for install
-
-build CMakeFiles\install.util: CUSTOM_COMMAND all
-  COMMAND = cmd.exe /C "cd /D D:\Code\C++\ChocBoarder\out\build\x86-Debug && D:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe -P cmake_install.cmake"
-  DESC = Install the project...
-  pool = console
-  restat = 1
-
-build install: phony CMakeFiles\install.util
 
 
 #############################################
@@ -123,313 +99,10 @@ build CMakeFiles\rebuild_cache.util: CUSTOM_COMMAND
 
 build rebuild_cache: phony CMakeFiles\rebuild_cache.util
 
-
-#############################################
-# Utility command for list_install_components
-
-build list_install_components: phony
-
-# =============================================================================
-# Write statements declared in CMakeLists.txt:
-# D:/Code/C++/ChocBoarder/CMakeLists.txt
-# =============================================================================
-
-
-#############################################
-# Utility command for uninstall
-
-build lib\GLFW\uninstall: phony lib\GLFW\CMakeFiles\uninstall
-
-
-#############################################
-# Utility command for install/local
-
-build lib\GLFW\CMakeFiles\install\local.util: CUSTOM_COMMAND lib\GLFW\all
-  COMMAND = cmd.exe /C "cd /D D:\Code\C++\ChocBoarder\out\build\x86-Debug\lib\GLFW && D:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake"
-  DESC = Installing only the local directory...
-  pool = console
-  restat = 1
-
-build lib\GLFW\install\local: phony lib\GLFW\CMakeFiles\install\local.util
-
-
-#############################################
-# Utility command for install
-
-build lib\GLFW\CMakeFiles\install.util: CUSTOM_COMMAND lib\GLFW\all
-  COMMAND = cmd.exe /C "cd /D D:\Code\C++\ChocBoarder\out\build\x86-Debug\lib\GLFW && D:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe -P cmake_install.cmake"
-  DESC = Install the project...
-  pool = console
-  restat = 1
-
-build lib\GLFW\install: phony lib\GLFW\CMakeFiles\install.util
-
-
-#############################################
-# Utility command for edit_cache
-
-build lib\GLFW\CMakeFiles\edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cmd.exe /C "cd /D D:\Code\C++\ChocBoarder\out\build\x86-Debug\lib\GLFW && D:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe -E echo "No interactive CMake dialog available.""
-  DESC = No interactive CMake dialog available...
-  restat = 1
-
-build lib\GLFW\edit_cache: phony lib\GLFW\CMakeFiles\edit_cache.util
-
-
-#############################################
-# Utility command for rebuild_cache
-
-build lib\GLFW\CMakeFiles\rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cmd.exe /C "cd /D D:\Code\C++\ChocBoarder\out\build\x86-Debug\lib\GLFW && D:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe -SD:\Code\C++\ChocBoarder -BD:\Code\C++\ChocBoarder\out\build\x86-Debug"
-  DESC = Running CMake to regenerate build system...
-  pool = console
-  restat = 1
-
-build lib\GLFW\rebuild_cache: phony lib\GLFW\CMakeFiles\rebuild_cache.util
-
-
-#############################################
-# Utility command for list_install_components
-
-build lib\GLFW\list_install_components: phony
-
-
-#############################################
-# Custom command for lib\GLFW\CMakeFiles\uninstall
-
-build lib\GLFW\CMakeFiles\uninstall: CUSTOM_COMMAND
-  COMMAND = cmd.exe /C "cd /D D:\Code\C++\ChocBoarder\out\build\x86-Debug\lib\GLFW && D:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe -P D:/Code/C++/ChocBoarder/out/build/x86-Debug/lib/GLFW/cmake_uninstall.cmake"
-
-# =============================================================================
-# Write statements declared in CMakeLists.txt:
-# D:/Code/C++/ChocBoarder/lib/GLFW/CMakeLists.txt
-# =============================================================================
-
-
-#############################################
-# Utility command for rebuild_cache
-
-build lib\GLFW\src\CMakeFiles\rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cmd.exe /C "cd /D D:\Code\C++\ChocBoarder\out\build\x86-Debug\lib\GLFW\src && D:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe -SD:\Code\C++\ChocBoarder -BD:\Code\C++\ChocBoarder\out\build\x86-Debug"
-  DESC = Running CMake to regenerate build system...
-  pool = console
-  restat = 1
-
-build lib\GLFW\src\rebuild_cache: phony lib\GLFW\src\CMakeFiles\rebuild_cache.util
-
-# =============================================================================
-# Object build statements for STATIC_LIBRARY target glfw
-
-
-#############################################
-# Order-only phony target for glfw
-
-build cmake_object_order_depends_target_glfw: phony || lib\GLFW\src\CMakeFiles\glfw.dir
-
-build lib\GLFW\src\CMakeFiles\glfw.dir\context.c.obj: C_COMPILER__glfw ..\..\..\lib\GLFW\src\context.c || cmake_object_order_depends_target_glfw
-  DEFINES = -D_CRT_SECURE_NO_WARNINGS -D_GLFW_USE_CONFIG_H -D_UNICODE
-  FLAGS = /DWIN32 /D_WINDOWS /Zi /Ob0 /Od /RTC1 -MDd
-  INCLUDES = -I..\..\..\include -I..\..\..\lib\GLFW\include -I..\..\..\lib\GLFW\src -Ilib\GLFW\src
-  OBJECT_DIR = lib\GLFW\src\CMakeFiles\glfw.dir
-  OBJECT_FILE_DIR = lib\GLFW\src\CMakeFiles\glfw.dir
-  TARGET_COMPILE_PDB = lib\GLFW\src\CMakeFiles\glfw.dir\glfw.pdb
-  TARGET_PDB = lib\GLFW\src\glfw3.pdb
-
-build lib\GLFW\src\CMakeFiles\glfw.dir\init.c.obj: C_COMPILER__glfw ..\..\..\lib\GLFW\src\init.c || cmake_object_order_depends_target_glfw
-  DEFINES = -D_CRT_SECURE_NO_WARNINGS -D_GLFW_USE_CONFIG_H -D_UNICODE
-  FLAGS = /DWIN32 /D_WINDOWS /Zi /Ob0 /Od /RTC1 -MDd
-  INCLUDES = -I..\..\..\include -I..\..\..\lib\GLFW\include -I..\..\..\lib\GLFW\src -Ilib\GLFW\src
-  OBJECT_DIR = lib\GLFW\src\CMakeFiles\glfw.dir
-  OBJECT_FILE_DIR = lib\GLFW\src\CMakeFiles\glfw.dir
-  TARGET_COMPILE_PDB = lib\GLFW\src\CMakeFiles\glfw.dir\glfw.pdb
-  TARGET_PDB = lib\GLFW\src\glfw3.pdb
-
-build lib\GLFW\src\CMakeFiles\glfw.dir\input.c.obj: C_COMPILER__glfw ..\..\..\lib\GLFW\src\input.c || cmake_object_order_depends_target_glfw
-  DEFINES = -D_CRT_SECURE_NO_WARNINGS -D_GLFW_USE_CONFIG_H -D_UNICODE
-  FLAGS = /DWIN32 /D_WINDOWS /Zi /Ob0 /Od /RTC1 -MDd
-  INCLUDES = -I..\..\..\include -I..\..\..\lib\GLFW\include -I..\..\..\lib\GLFW\src -Ilib\GLFW\src
-  OBJECT_DIR = lib\GLFW\src\CMakeFiles\glfw.dir
-  OBJECT_FILE_DIR = lib\GLFW\src\CMakeFiles\glfw.dir
-  TARGET_COMPILE_PDB = lib\GLFW\src\CMakeFiles\glfw.dir\glfw.pdb
-  TARGET_PDB = lib\GLFW\src\glfw3.pdb
-
-build lib\GLFW\src\CMakeFiles\glfw.dir\monitor.c.obj: C_COMPILER__glfw ..\..\..\lib\GLFW\src\monitor.c || cmake_object_order_depends_target_glfw
-  DEFINES = -D_CRT_SECURE_NO_WARNINGS -D_GLFW_USE_CONFIG_H -D_UNICODE
-  FLAGS = /DWIN32 /D_WINDOWS /Zi /Ob0 /Od /RTC1 -MDd
-  INCLUDES = -I..\..\..\include -I..\..\..\lib\GLFW\include -I..\..\..\lib\GLFW\src -Ilib\GLFW\src
-  OBJECT_DIR = lib\GLFW\src\CMakeFiles\glfw.dir
-  OBJECT_FILE_DIR = lib\GLFW\src\CMakeFiles\glfw.dir
-  TARGET_COMPILE_PDB = lib\GLFW\src\CMakeFiles\glfw.dir\glfw.pdb
-  TARGET_PDB = lib\GLFW\src\glfw3.pdb
-
-build lib\GLFW\src\CMakeFiles\glfw.dir\vulkan.c.obj: C_COMPILER__glfw ..\..\..\lib\GLFW\src\vulkan.c || cmake_object_order_depends_target_glfw
-  DEFINES = -D_CRT_SECURE_NO_WARNINGS -D_GLFW_USE_CONFIG_H -D_UNICODE
-  FLAGS = /DWIN32 /D_WINDOWS /Zi /Ob0 /Od /RTC1 -MDd
-  INCLUDES = -I..\..\..\include -I..\..\..\lib\GLFW\include -I..\..\..\lib\GLFW\src -Ilib\GLFW\src
-  OBJECT_DIR = lib\GLFW\src\CMakeFiles\glfw.dir
-  OBJECT_FILE_DIR = lib\GLFW\src\CMakeFiles\glfw.dir
-  TARGET_COMPILE_PDB = lib\GLFW\src\CMakeFiles\glfw.dir\glfw.pdb
-  TARGET_PDB = lib\GLFW\src\glfw3.pdb
-
-build lib\GLFW\src\CMakeFiles\glfw.dir\window.c.obj: C_COMPILER__glfw ..\..\..\lib\GLFW\src\window.c || cmake_object_order_depends_target_glfw
-  DEFINES = -D_CRT_SECURE_NO_WARNINGS -D_GLFW_USE_CONFIG_H -D_UNICODE
-  FLAGS = /DWIN32 /D_WINDOWS /Zi /Ob0 /Od /RTC1 -MDd
-  INCLUDES = -I..\..\..\include -I..\..\..\lib\GLFW\include -I..\..\..\lib\GLFW\src -Ilib\GLFW\src
-  OBJECT_DIR = lib\GLFW\src\CMakeFiles\glfw.dir
-  OBJECT_FILE_DIR = lib\GLFW\src\CMakeFiles\glfw.dir
-  TARGET_COMPILE_PDB = lib\GLFW\src\CMakeFiles\glfw.dir\glfw.pdb
-  TARGET_PDB = lib\GLFW\src\glfw3.pdb
-
-build lib\GLFW\src\CMakeFiles\glfw.dir\win32_init.c.obj: C_COMPILER__glfw ..\..\..\lib\GLFW\src\win32_init.c || cmake_object_order_depends_target_glfw
-  DEFINES = -D_CRT_SECURE_NO_WARNINGS -D_GLFW_USE_CONFIG_H -D_UNICODE
-  FLAGS = /DWIN32 /D_WINDOWS /Zi /Ob0 /Od /RTC1 -MDd
-  INCLUDES = -I..\..\..\include -I..\..\..\lib\GLFW\include -I..\..\..\lib\GLFW\src -Ilib\GLFW\src
-  OBJECT_DIR = lib\GLFW\src\CMakeFiles\glfw.dir
-  OBJECT_FILE_DIR = lib\GLFW\src\CMakeFiles\glfw.dir
-  TARGET_COMPILE_PDB = lib\GLFW\src\CMakeFiles\glfw.dir\glfw.pdb
-  TARGET_PDB = lib\GLFW\src\glfw3.pdb
-
-build lib\GLFW\src\CMakeFiles\glfw.dir\win32_joystick.c.obj: C_COMPILER__glfw ..\..\..\lib\GLFW\src\win32_joystick.c || cmake_object_order_depends_target_glfw
-  DEFINES = -D_CRT_SECURE_NO_WARNINGS -D_GLFW_USE_CONFIG_H -D_UNICODE
-  FLAGS = /DWIN32 /D_WINDOWS /Zi /Ob0 /Od /RTC1 -MDd
-  INCLUDES = -I..\..\..\include -I..\..\..\lib\GLFW\include -I..\..\..\lib\GLFW\src -Ilib\GLFW\src
-  OBJECT_DIR = lib\GLFW\src\CMakeFiles\glfw.dir
-  OBJECT_FILE_DIR = lib\GLFW\src\CMakeFiles\glfw.dir
-  TARGET_COMPILE_PDB = lib\GLFW\src\CMakeFiles\glfw.dir\glfw.pdb
-  TARGET_PDB = lib\GLFW\src\glfw3.pdb
-
-build lib\GLFW\src\CMakeFiles\glfw.dir\win32_monitor.c.obj: C_COMPILER__glfw ..\..\..\lib\GLFW\src\win32_monitor.c || cmake_object_order_depends_target_glfw
-  DEFINES = -D_CRT_SECURE_NO_WARNINGS -D_GLFW_USE_CONFIG_H -D_UNICODE
-  FLAGS = /DWIN32 /D_WINDOWS /Zi /Ob0 /Od /RTC1 -MDd
-  INCLUDES = -I..\..\..\include -I..\..\..\lib\GLFW\include -I..\..\..\lib\GLFW\src -Ilib\GLFW\src
-  OBJECT_DIR = lib\GLFW\src\CMakeFiles\glfw.dir
-  OBJECT_FILE_DIR = lib\GLFW\src\CMakeFiles\glfw.dir
-  TARGET_COMPILE_PDB = lib\GLFW\src\CMakeFiles\glfw.dir\glfw.pdb
-  TARGET_PDB = lib\GLFW\src\glfw3.pdb
-
-build lib\GLFW\src\CMakeFiles\glfw.dir\win32_time.c.obj: C_COMPILER__glfw ..\..\..\lib\GLFW\src\win32_time.c || cmake_object_order_depends_target_glfw
-  DEFINES = -D_CRT_SECURE_NO_WARNINGS -D_GLFW_USE_CONFIG_H -D_UNICODE
-  FLAGS = /DWIN32 /D_WINDOWS /Zi /Ob0 /Od /RTC1 -MDd
-  INCLUDES = -I..\..\..\include -I..\..\..\lib\GLFW\include -I..\..\..\lib\GLFW\src -Ilib\GLFW\src
-  OBJECT_DIR = lib\GLFW\src\CMakeFiles\glfw.dir
-  OBJECT_FILE_DIR = lib\GLFW\src\CMakeFiles\glfw.dir
-  TARGET_COMPILE_PDB = lib\GLFW\src\CMakeFiles\glfw.dir\glfw.pdb
-  TARGET_PDB = lib\GLFW\src\glfw3.pdb
-
-build lib\GLFW\src\CMakeFiles\glfw.dir\win32_thread.c.obj: C_COMPILER__glfw ..\..\..\lib\GLFW\src\win32_thread.c || cmake_object_order_depends_target_glfw
-  DEFINES = -D_CRT_SECURE_NO_WARNINGS -D_GLFW_USE_CONFIG_H -D_UNICODE
-  FLAGS = /DWIN32 /D_WINDOWS /Zi /Ob0 /Od /RTC1 -MDd
-  INCLUDES = -I..\..\..\include -I..\..\..\lib\GLFW\include -I..\..\..\lib\GLFW\src -Ilib\GLFW\src
-  OBJECT_DIR = lib\GLFW\src\CMakeFiles\glfw.dir
-  OBJECT_FILE_DIR = lib\GLFW\src\CMakeFiles\glfw.dir
-  TARGET_COMPILE_PDB = lib\GLFW\src\CMakeFiles\glfw.dir\glfw.pdb
-  TARGET_PDB = lib\GLFW\src\glfw3.pdb
-
-build lib\GLFW\src\CMakeFiles\glfw.dir\win32_window.c.obj: C_COMPILER__glfw ..\..\..\lib\GLFW\src\win32_window.c || cmake_object_order_depends_target_glfw
-  DEFINES = -D_CRT_SECURE_NO_WARNINGS -D_GLFW_USE_CONFIG_H -D_UNICODE
-  FLAGS = /DWIN32 /D_WINDOWS /Zi /Ob0 /Od /RTC1 -MDd
-  INCLUDES = -I..\..\..\include -I..\..\..\lib\GLFW\include -I..\..\..\lib\GLFW\src -Ilib\GLFW\src
-  OBJECT_DIR = lib\GLFW\src\CMakeFiles\glfw.dir
-  OBJECT_FILE_DIR = lib\GLFW\src\CMakeFiles\glfw.dir
-  TARGET_COMPILE_PDB = lib\GLFW\src\CMakeFiles\glfw.dir\glfw.pdb
-  TARGET_PDB = lib\GLFW\src\glfw3.pdb
-
-build lib\GLFW\src\CMakeFiles\glfw.dir\wgl_context.c.obj: C_COMPILER__glfw ..\..\..\lib\GLFW\src\wgl_context.c || cmake_object_order_depends_target_glfw
-  DEFINES = -D_CRT_SECURE_NO_WARNINGS -D_GLFW_USE_CONFIG_H -D_UNICODE
-  FLAGS = /DWIN32 /D_WINDOWS /Zi /Ob0 /Od /RTC1 -MDd
-  INCLUDES = -I..\..\..\include -I..\..\..\lib\GLFW\include -I..\..\..\lib\GLFW\src -Ilib\GLFW\src
-  OBJECT_DIR = lib\GLFW\src\CMakeFiles\glfw.dir
-  OBJECT_FILE_DIR = lib\GLFW\src\CMakeFiles\glfw.dir
-  TARGET_COMPILE_PDB = lib\GLFW\src\CMakeFiles\glfw.dir\glfw.pdb
-  TARGET_PDB = lib\GLFW\src\glfw3.pdb
-
-build lib\GLFW\src\CMakeFiles\glfw.dir\egl_context.c.obj: C_COMPILER__glfw ..\..\..\lib\GLFW\src\egl_context.c || cmake_object_order_depends_target_glfw
-  DEFINES = -D_CRT_SECURE_NO_WARNINGS -D_GLFW_USE_CONFIG_H -D_UNICODE
-  FLAGS = /DWIN32 /D_WINDOWS /Zi /Ob0 /Od /RTC1 -MDd
-  INCLUDES = -I..\..\..\include -I..\..\..\lib\GLFW\include -I..\..\..\lib\GLFW\src -Ilib\GLFW\src
-  OBJECT_DIR = lib\GLFW\src\CMakeFiles\glfw.dir
-  OBJECT_FILE_DIR = lib\GLFW\src\CMakeFiles\glfw.dir
-  TARGET_COMPILE_PDB = lib\GLFW\src\CMakeFiles\glfw.dir\glfw.pdb
-  TARGET_PDB = lib\GLFW\src\glfw3.pdb
-
-build lib\GLFW\src\CMakeFiles\glfw.dir\osmesa_context.c.obj: C_COMPILER__glfw ..\..\..\lib\GLFW\src\osmesa_context.c || cmake_object_order_depends_target_glfw
-  DEFINES = -D_CRT_SECURE_NO_WARNINGS -D_GLFW_USE_CONFIG_H -D_UNICODE
-  FLAGS = /DWIN32 /D_WINDOWS /Zi /Ob0 /Od /RTC1 -MDd
-  INCLUDES = -I..\..\..\include -I..\..\..\lib\GLFW\include -I..\..\..\lib\GLFW\src -Ilib\GLFW\src
-  OBJECT_DIR = lib\GLFW\src\CMakeFiles\glfw.dir
-  OBJECT_FILE_DIR = lib\GLFW\src\CMakeFiles\glfw.dir
-  TARGET_COMPILE_PDB = lib\GLFW\src\CMakeFiles\glfw.dir\glfw.pdb
-  TARGET_PDB = lib\GLFW\src\glfw3.pdb
-
-
-# =============================================================================
-# Link build statements for STATIC_LIBRARY target glfw
-
-
-#############################################
-# Link the static library lib\GLFW\src\glfw3.lib
-
-build lib\GLFW\src\glfw3.lib: C_STATIC_LIBRARY_LINKER__glfw lib\GLFW\src\CMakeFiles\glfw.dir\context.c.obj lib\GLFW\src\CMakeFiles\glfw.dir\init.c.obj lib\GLFW\src\CMakeFiles\glfw.dir\input.c.obj lib\GLFW\src\CMakeFiles\glfw.dir\monitor.c.obj lib\GLFW\src\CMakeFiles\glfw.dir\vulkan.c.obj lib\GLFW\src\CMakeFiles\glfw.dir\window.c.obj lib\GLFW\src\CMakeFiles\glfw.dir\win32_init.c.obj lib\GLFW\src\CMakeFiles\glfw.dir\win32_joystick.c.obj lib\GLFW\src\CMakeFiles\glfw.dir\win32_monitor.c.obj lib\GLFW\src\CMakeFiles\glfw.dir\win32_time.c.obj lib\GLFW\src\CMakeFiles\glfw.dir\win32_thread.c.obj lib\GLFW\src\CMakeFiles\glfw.dir\win32_window.c.obj lib\GLFW\src\CMakeFiles\glfw.dir\wgl_context.c.obj lib\GLFW\src\CMakeFiles\glfw.dir\egl_context.c.obj lib\GLFW\src\CMakeFiles\glfw.dir\osmesa_context.c.obj
-  LANGUAGE_COMPILE_FLAGS = /DWIN32 /D_WINDOWS /Zi /Ob0 /Od /RTC1 -MDd
-  LINK_FLAGS = /machine:X86
-  OBJECT_DIR = lib\GLFW\src\CMakeFiles\glfw.dir
-  POST_BUILD = cd .
-  PRE_LINK = cd .
-  TARGET_COMPILE_PDB = lib\GLFW\src\CMakeFiles\glfw.dir\glfw.pdb
-  TARGET_FILE = lib\GLFW\src\glfw3.lib
-  TARGET_PDB = lib\GLFW\src\glfw3.pdb
-
-
-#############################################
-# Utility command for install/local
-
-build lib\GLFW\src\CMakeFiles\install\local.util: CUSTOM_COMMAND lib\GLFW\src\all
-  COMMAND = cmd.exe /C "cd /D D:\Code\C++\ChocBoarder\out\build\x86-Debug\lib\GLFW\src && D:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake"
-  DESC = Installing only the local directory...
-  pool = console
-  restat = 1
-
-build lib\GLFW\src\install\local: phony lib\GLFW\src\CMakeFiles\install\local.util
-
-
-#############################################
-# Utility command for install
-
-build lib\GLFW\src\CMakeFiles\install.util: CUSTOM_COMMAND lib\GLFW\src\all
-  COMMAND = cmd.exe /C "cd /D D:\Code\C++\ChocBoarder\out\build\x86-Debug\lib\GLFW\src && D:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe -P cmake_install.cmake"
-  DESC = Install the project...
-  pool = console
-  restat = 1
-
-build lib\GLFW\src\install: phony lib\GLFW\src\CMakeFiles\install.util
-
-
-#############################################
-# Utility command for edit_cache
-
-build lib\GLFW\src\CMakeFiles\edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cmd.exe /C "cd /D D:\Code\C++\ChocBoarder\out\build\x86-Debug\lib\GLFW\src && D:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe -E echo "No interactive CMake dialog available.""
-  DESC = No interactive CMake dialog available...
-  restat = 1
-
-build lib\GLFW\src\edit_cache: phony lib\GLFW\src\CMakeFiles\edit_cache.util
-
-
-#############################################
-# Utility command for list_install_components
-
-build lib\GLFW\src\list_install_components: phony
-
 # =============================================================================
 # Target aliases.
 
 build Chocboarder: phony Chocboarder.exe
-
-build glfw: phony lib\GLFW\src\glfw3.lib
-
-build glfw3.lib: phony lib\GLFW\src\glfw3.lib
-
-build uninstall: phony lib\GLFW\uninstall
 
 # =============================================================================
 # Folder targets.
@@ -439,21 +112,7 @@ build uninstall: phony lib\GLFW\uninstall
 #############################################
 # Folder: D:/Code/C++/ChocBoarder/out/build/x86-Debug
 
-build all: phony Chocboarder.exe lib\GLFW\all
-
-# =============================================================================
-
-#############################################
-# Folder: D:/Code/C++/ChocBoarder/out/build/x86-Debug/lib/GLFW
-
-build lib\GLFW\all: phony lib\GLFW\src\all
-
-# =============================================================================
-
-#############################################
-# Folder: D:/Code/C++/ChocBoarder/out/build/x86-Debug/lib/GLFW/src
-
-build lib\GLFW\src\all: phony lib\GLFW\src\glfw3.lib
+build all: phony Chocboarder.exe
 
 # =============================================================================
 # Built-in targets
@@ -467,14 +126,14 @@ default all
 #############################################
 # Re-run CMake if any of its inputs changed.
 
-build build.ninja: RERUN_CMAKE | ..\..\..\CMakeLists.txt ..\..\..\lib\GLFW\CMakeLists.txt ..\..\..\lib\GLFW\cmake_uninstall.cmake.in ..\..\..\lib\GLFW\src\CMakeLists.txt ..\..\..\lib\GLFW\src\glfw3.pc.in ..\..\..\lib\GLFW\src\glfw3Config.cmake.in ..\..\..\lib\GLFW\src\glfw_config.h.in CMakeCache.txt CMakeFiles\3.16.19112601-MSVC_2\CMakeCCompiler.cmake CMakeFiles\3.16.19112601-MSVC_2\CMakeCXXCompiler.cmake CMakeFiles\3.16.19112601-MSVC_2\CMakeRCCompiler.cmake CMakeFiles\3.16.19112601-MSVC_2\CMakeSystem.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\BasicConfigVersion-SameMajorVersion.cmake.in D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\CMakeCCompiler.cmake.in D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\CMakeCCompilerABI.c D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\CMakeCInformation.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\CMakeCXXCompiler.cmake.in D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\CMakeCXXCompilerABI.cpp D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\CMakeCXXInformation.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\CMakeCommonLanguageInclude.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\CMakeCompilerIdDetection.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\CMakeDependentOption.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\CMakeDetermineCCompiler.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\CMakeDetermineCXXCompiler.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\CMakeDetermineCompileFeatures.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\CMakeDetermineCompiler.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\CMakeDetermineCompilerABI.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\CMakeDetermineCompilerId.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\CMakeDetermineRCCompiler.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\CMakeDetermineSystem.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\CMakeFindBinUtils.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\CMakeGenericSystem.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\CMakeInitializeConfigs.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\CMakeLanguageInformation.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\CMakePackageConfigHelpers.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\CMakeParseImplicitIncludeInfo.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\CMakeParseImplicitLinkInfo.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\CMakeRCCompiler.cmake.in D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\CMakeRCInformation.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\CMakeSystem.cmake.in D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\CMakeSystemSpecificInformation.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\CMakeSystemSpecificInitialize.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\CMakeTestCCompiler.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\CMakeTestCXXCompiler.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\CMakeTestCompilerCommon.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\CMakeTestRCCompiler.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\CheckCSourceCompiles.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\CheckIncludeFile.c.in D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\CheckIncludeFile.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\CheckLibraryExists.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\Compiler\ADSP-DetermineCompiler.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\Compiler\ARMCC-DetermineCompiler.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\Compiler\ARMClang-DetermineCompiler.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\Compiler\AppleClang-DetermineCompiler.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\Compiler\Borland-DetermineCompiler.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\Compiler\Bruce-C-DetermineCompiler.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\Compiler\CMakeCommonCompilerMacros.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\Compiler\Clang-DetermineCompiler.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\Compiler\Clang-DetermineCompilerInternal.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\Compiler\Comeau-CXX-DetermineCompiler.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\Compiler\Compaq-C-DetermineCompiler.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\Compiler\Compaq-CXX-DetermineCompiler.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\Compiler\Cray-DetermineCompiler.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\Compiler\Embarcadero-DetermineCompiler.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\Compiler\Fujitsu-DetermineCompiler.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\Compiler\GHS-DetermineCompiler.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\Compiler\GNU-C-DetermineCompiler.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\Compiler\GNU-CXX-DetermineCompiler.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\Compiler\HP-C-DetermineCompiler.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\Compiler\HP-CXX-DetermineCompiler.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\Compiler\IAR-DetermineCompiler.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\Compiler\IBMCPP-C-DetermineVersionInternal.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\Compiler\IBMCPP-CXX-DetermineVersionInternal.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\Compiler\Intel-DetermineCompiler.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\Compiler\MSVC-C.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\Compiler\MSVC-CXX.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\Compiler\MSVC-DetermineCompiler.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\Compiler\NVIDIA-DetermineCompiler.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\Compiler\OpenWatcom-DetermineCompiler.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\Compiler\PGI-DetermineCompiler.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\Compiler\PathScale-DetermineCompiler.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\Compiler\SCO-DetermineCompiler.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\Compiler\SDCC-C-DetermineCompiler.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\Compiler\SunPro-C-DetermineCompiler.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\Compiler\SunPro-CXX-DetermineCompiler.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\Compiler\TI-DetermineCompiler.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\Compiler\TinyCC-C-DetermineCompiler.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\Compiler\VisualAge-C-DetermineCompiler.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\Compiler\VisualAge-CXX-DetermineCompiler.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\Compiler\Watcom-DetermineCompiler.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\Compiler\XL-C-DetermineCompiler.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\Compiler\XL-CXX-DetermineCompiler.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\Compiler\XLClang-C-DetermineCompiler.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\Compiler\XLClang-CXX-DetermineCompiler.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\Compiler\zOS-C-DetermineCompiler.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\Compiler\zOS-CXX-DetermineCompiler.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\FindPackageHandleStandardArgs.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\FindPackageMessage.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\FindThreads.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\FindwxWidgets.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\GNUInstallDirs.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\Internal\FeatureTesting.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\Platform\Windows-Determine-CXX.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\Platform\Windows-MSVC-C.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\Platform\Windows-MSVC-CXX.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\Platform\Windows-MSVC.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\Platform\Windows.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\Platform\WindowsPaths.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\UsewxWidgets.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\WriteBasicConfigVersionFile.cmake
+build build.ninja: RERUN_CMAKE | ..\..\..\CMakeLists.txt CMakeCache.txt CMakeFiles\3.16.19112601-MSVC_2\CMakeCCompiler.cmake CMakeFiles\3.16.19112601-MSVC_2\CMakeCXXCompiler.cmake CMakeFiles\3.16.19112601-MSVC_2\CMakeRCCompiler.cmake CMakeFiles\3.16.19112601-MSVC_2\CMakeSystem.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\CMakeCInformation.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\CMakeCXXInformation.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\CMakeCommonLanguageInclude.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\CMakeGenericSystem.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\CMakeInitializeConfigs.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\CMakeLanguageInformation.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\CMakeRCInformation.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\CMakeSystemSpecificInformation.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\CMakeSystemSpecificInitialize.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\Compiler\CMakeCommonCompilerMacros.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\Compiler\MSVC-C.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\Compiler\MSVC-CXX.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\FindPackageHandleStandardArgs.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\FindPackageMessage.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\FindwxWidgets.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\Platform\Windows-MSVC-C.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\Platform\Windows-MSVC-CXX.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\Platform\Windows-MSVC.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\Platform\Windows.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\Platform\WindowsPaths.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\UsewxWidgets.cmake
   pool = console
 
 
 #############################################
 # A missing CMake input file is not an error.
 
-build ..\..\..\CMakeLists.txt ..\..\..\lib\GLFW\CMakeLists.txt ..\..\..\lib\GLFW\cmake_uninstall.cmake.in ..\..\..\lib\GLFW\src\CMakeLists.txt ..\..\..\lib\GLFW\src\glfw3.pc.in ..\..\..\lib\GLFW\src\glfw3Config.cmake.in ..\..\..\lib\GLFW\src\glfw_config.h.in CMakeCache.txt CMakeFiles\3.16.19112601-MSVC_2\CMakeCCompiler.cmake CMakeFiles\3.16.19112601-MSVC_2\CMakeCXXCompiler.cmake CMakeFiles\3.16.19112601-MSVC_2\CMakeRCCompiler.cmake CMakeFiles\3.16.19112601-MSVC_2\CMakeSystem.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\BasicConfigVersion-SameMajorVersion.cmake.in D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\CMakeCCompiler.cmake.in D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\CMakeCCompilerABI.c D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\CMakeCInformation.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\CMakeCXXCompiler.cmake.in D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\CMakeCXXCompilerABI.cpp D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\CMakeCXXInformation.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\CMakeCommonLanguageInclude.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\CMakeCompilerIdDetection.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\CMakeDependentOption.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\CMakeDetermineCCompiler.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\CMakeDetermineCXXCompiler.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\CMakeDetermineCompileFeatures.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\CMakeDetermineCompiler.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\CMakeDetermineCompilerABI.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\CMakeDetermineCompilerId.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\CMakeDetermineRCCompiler.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\CMakeDetermineSystem.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\CMakeFindBinUtils.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\CMakeGenericSystem.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\CMakeInitializeConfigs.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\CMakeLanguageInformation.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\CMakePackageConfigHelpers.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\CMakeParseImplicitIncludeInfo.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\CMakeParseImplicitLinkInfo.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\CMakeRCCompiler.cmake.in D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\CMakeRCInformation.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\CMakeSystem.cmake.in D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\CMakeSystemSpecificInformation.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\CMakeSystemSpecificInitialize.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\CMakeTestCCompiler.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\CMakeTestCXXCompiler.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\CMakeTestCompilerCommon.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\CMakeTestRCCompiler.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\CheckCSourceCompiles.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\CheckIncludeFile.c.in D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\CheckIncludeFile.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\CheckLibraryExists.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\Compiler\ADSP-DetermineCompiler.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\Compiler\ARMCC-DetermineCompiler.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\Compiler\ARMClang-DetermineCompiler.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\Compiler\AppleClang-DetermineCompiler.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\Compiler\Borland-DetermineCompiler.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\Compiler\Bruce-C-DetermineCompiler.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\Compiler\CMakeCommonCompilerMacros.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\Compiler\Clang-DetermineCompiler.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\Compiler\Clang-DetermineCompilerInternal.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\Compiler\Comeau-CXX-DetermineCompiler.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\Compiler\Compaq-C-DetermineCompiler.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\Compiler\Compaq-CXX-DetermineCompiler.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\Compiler\Cray-DetermineCompiler.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\Compiler\Embarcadero-DetermineCompiler.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\Compiler\Fujitsu-DetermineCompiler.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\Compiler\GHS-DetermineCompiler.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\Compiler\GNU-C-DetermineCompiler.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\Compiler\GNU-CXX-DetermineCompiler.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\Compiler\HP-C-DetermineCompiler.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\Compiler\HP-CXX-DetermineCompiler.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\Compiler\IAR-DetermineCompiler.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\Compiler\IBMCPP-C-DetermineVersionInternal.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\Compiler\IBMCPP-CXX-DetermineVersionInternal.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\Compiler\Intel-DetermineCompiler.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\Compiler\MSVC-C.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\Compiler\MSVC-CXX.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\Compiler\MSVC-DetermineCompiler.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\Compiler\NVIDIA-DetermineCompiler.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\Compiler\OpenWatcom-DetermineCompiler.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\Compiler\PGI-DetermineCompiler.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\Compiler\PathScale-DetermineCompiler.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\Compiler\SCO-DetermineCompiler.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\Compiler\SDCC-C-DetermineCompiler.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\Compiler\SunPro-C-DetermineCompiler.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\Compiler\SunPro-CXX-DetermineCompiler.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\Compiler\TI-DetermineCompiler.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\Compiler\TinyCC-C-DetermineCompiler.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\Compiler\VisualAge-C-DetermineCompiler.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\Compiler\VisualAge-CXX-DetermineCompiler.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\Compiler\Watcom-DetermineCompiler.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\Compiler\XL-C-DetermineCompiler.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\Compiler\XL-CXX-DetermineCompiler.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\Compiler\XLClang-C-DetermineCompiler.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\Compiler\XLClang-CXX-DetermineCompiler.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\Compiler\zOS-C-DetermineCompiler.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\Compiler\zOS-CXX-DetermineCompiler.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\FindPackageHandleStandardArgs.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\FindPackageMessage.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\FindThreads.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\FindwxWidgets.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\GNUInstallDirs.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\Internal\FeatureTesting.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\Platform\Windows-Determine-CXX.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\Platform\Windows-MSVC-C.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\Platform\Windows-MSVC-CXX.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\Platform\Windows-MSVC.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\Platform\Windows.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\Platform\WindowsPaths.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\UsewxWidgets.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\WriteBasicConfigVersionFile.cmake: phony
+build ..\..\..\CMakeLists.txt CMakeCache.txt CMakeFiles\3.16.19112601-MSVC_2\CMakeCCompiler.cmake CMakeFiles\3.16.19112601-MSVC_2\CMakeCXXCompiler.cmake CMakeFiles\3.16.19112601-MSVC_2\CMakeRCCompiler.cmake CMakeFiles\3.16.19112601-MSVC_2\CMakeSystem.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\CMakeCInformation.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\CMakeCXXInformation.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\CMakeCommonLanguageInclude.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\CMakeGenericSystem.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\CMakeInitializeConfigs.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\CMakeLanguageInformation.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\CMakeRCInformation.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\CMakeSystemSpecificInformation.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\CMakeSystemSpecificInitialize.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\Compiler\CMakeCommonCompilerMacros.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\Compiler\MSVC-C.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\Compiler\MSVC-CXX.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\FindPackageHandleStandardArgs.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\FindPackageMessage.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\FindwxWidgets.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\Platform\Windows-MSVC-C.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\Platform\Windows-MSVC-CXX.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\Platform\Windows-MSVC.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\Platform\Windows.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\Platform\WindowsPaths.cmake D$:\Software\Code\VisualStudio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\UsewxWidgets.cmake: phony
 
 
 #############################################

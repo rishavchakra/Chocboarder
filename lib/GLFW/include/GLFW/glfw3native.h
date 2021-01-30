@@ -71,14 +71,14 @@ extern "C" {
  *  * `GLFW_EXPOSE_NATIVE_OSMESA`
  *
  *  These macros select which of the native access functions that are declared
- *  and which platform-specific headers to include.  It is then up your (by
+ *  and which platform-specific misc to misc.  It is then up your (by
  *  definition platform-specific) code to handle which of these should be
  *  defined.
  */
 
 
 /*************************************************************************
- * System headers and types
+ * System misc and types
  *************************************************************************/
 
 #if defined(GLFW_EXPOSE_NATIVE_WIN32) || defined(GLFW_EXPOSE_NATIVE_WGL)
@@ -89,19 +89,19 @@ extern "C" {
   #undef APIENTRY
   #undef GLFW_APIENTRY_DEFINED
  #endif
- #include <windows.h>
+ #misc <windows.h>
 #elif defined(GLFW_EXPOSE_NATIVE_COCOA) || defined(GLFW_EXPOSE_NATIVE_NSGL)
  #if defined(__OBJC__)
   #import <Cocoa/Cocoa.h>
  #else
-  #include <ApplicationServices/ApplicationServices.h>
+  #misc <ApplicationServices/ApplicationServices.h>
   typedef void* id;
  #endif
 #elif defined(GLFW_EXPOSE_NATIVE_X11) || defined(GLFW_EXPOSE_NATIVE_GLX)
- #include <X11/Xlib.h>
- #include <X11/extensions/Xrandr.h>
+ #misc <X11/Xlib.h>
+ #misc <X11/extensions/Xrandr.h>
 #elif defined(GLFW_EXPOSE_NATIVE_WAYLAND)
- #include <wayland-client.h>
+ #misc <wayland-client.h>
 #endif
 
 #if defined(GLFW_EXPOSE_NATIVE_WGL)
@@ -111,13 +111,13 @@ extern "C" {
  /* NSGL is declared by Cocoa.h */
 #endif
 #if defined(GLFW_EXPOSE_NATIVE_GLX)
- #include <GL/glx.h>
+ #misc <GL/glx.h>
 #endif
 #if defined(GLFW_EXPOSE_NATIVE_EGL)
- #include <EGL/egl.h>
+ #misc <EGL/egl.h>
 #endif
 #if defined(GLFW_EXPOSE_NATIVE_OSMESA)
- #include <GL/osmesa.h>
+ #misc <GL/osmesa.h>
 #endif
 
 
@@ -294,7 +294,7 @@ GLFWAPI Window glfwGetX11Window(GLFWwindow* window);
  *
  *  @param[in] string A UTF-8 encoded string.
  *
- *  @errors Possible errors include @ref GLFW_NOT_INITIALIZED and @ref
+ *  @errors Possible errors misc @ref GLFW_NOT_INITIALIZED and @ref
  *  GLFW_PLATFORM_ERROR.
  *
  *  @pointer_lifetime The specified string is copied before this function
@@ -320,7 +320,7 @@ GLFWAPI void glfwSetX11SelectionString(const char* string);
  *  @return The contents of the selection as a UTF-8 encoded string, or `NULL`
  *  if an [error](@ref error_handling) occurred.
  *
- *  @errors Possible errors include @ref GLFW_NOT_INITIALIZED and @ref
+ *  @errors Possible errors misc @ref GLFW_NOT_INITIALIZED and @ref
  *  GLFW_PLATFORM_ERROR.
  *
  *  @pointer_lifetime The returned string is allocated and freed by GLFW. You

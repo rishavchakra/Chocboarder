@@ -44,24 +44,6 @@ rule CUSTOM_COMMAND
 
 
 #############################################
-# Rule for compiling C files.
-
-rule C_COMPILER__glfw
-  deps = msvc
-  command = D:\Software\Code\VisualStudio\VC\Tools\MSVC\14.25.28610\bin\HostX86\x86\cl.exe  /nologo $DEFINES $INCLUDES $FLAGS /showIncludes /Fo$out /Fd$TARGET_COMPILE_PDB /FS -c $in
-  description = Building C object $out
-
-
-#############################################
-# Rule for linking C static library.
-
-rule C_STATIC_LIBRARY_LINKER__glfw
-  command = cmd.exe /C "$PRE_LINK && D:\Software\Code\VisualStudio\VC\Tools\MSVC\14.25.28610\bin\Hostx86\x86\link.exe /lib /nologo $LINK_FLAGS /out:$TARGET_FILE $in  && $POST_BUILD"
-  description = Linking C static library $TARGET_FILE
-  restat = $RESTAT
-
-
-#############################################
 # Rule for re-running cmake.
 
 rule RERUN_CMAKE
