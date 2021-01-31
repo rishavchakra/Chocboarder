@@ -26,8 +26,13 @@ wxEND_EVENT_TABLE()
 cMain::cMain() :
 		wxFrame(nullptr, wxID_ANY, "ChocBoarder", wxPoint(30, 30), wxSize(800, 700))
 {
-//	Initializes all the window components
-	InitMenu();
+	//	Initializes all the window components
+	InitMenu(this);
+	InitToolbar(this);
+	InitMainPanel(this);
+	InitTimelinePanel(this);
+	
+	SetSpacings();
 }
 
 cMain::~cMain()
@@ -38,10 +43,10 @@ cMain::~cMain()
 //          Inline Window Initialization functions
 //
 //TODO: Add keyboard shortcuts to menu items
-inline void cMain::InitMenu()
+inline void cMain::InitMenu(wxFrame *_frame)
 {
 	m_menuBar = new wxMenuBar();
-	this->SetMenuBar(m_menuBar);
+	_frame->SetMenuBar(m_menuBar);
 	
 	//Menu file options
 	wxMenu *menuFile = new wxMenu();
@@ -70,6 +75,67 @@ inline void cMain::InitMenu()
 	wxMenu *menuHelp = new wxMenu();
 	menuHelp->Append(ID::MenuHelpShortcuts, "Keyboard Shortcuts");
 	m_menuBar->Append(menuHelp, "Help");
+}
+
+inline void cMain::InitToolbar(wxFrame *_frame)
+{
+//	m_toolbarPanel = new wxPanel(_frame, ID::ToolbarPanel);
+	
+	//	m_toolbarPanelLeft = new wxPanel(_frame, ID::ToolbarPanelLeft, wxPoint(0, 0));
+	m_toolbarPanel = new wxPanel(_frame, ID::ToolbarPanel);
+	m_toolbarPanel->SetBackgroundColour(Colors::primary_fg);
+	
+	m_toolBar = new wxToolBar(m_toolbarPanel, ID::Toolbar, wxPoint(0, 0), wxSize(-1, -1));
+	m_toolBar->SetBackgroundColour(Colors::primary_fg);
+	
+	m_toolBar->AddTool(ID::ToolButtonNew, "New", wxBitmap(wxSize(30, 30)));
+	m_toolBar->AddTool(ID::ToolButtonNew, "Open", wxBitmap(wxSize(30, 30)));
+	m_toolBar->AddTool(ID::ToolButtonNew, "Save", wxBitmap(wxSize(30, 30)));
+	
+	m_toolBar->AddSeparator();
+	m_toolBar->AddStretchableSpace();
+	
+	m_toolBar->AddTool(ID::ToolButtonNew, "Undo", wxBitmap(wxSize(30, 30)));
+	m_toolBar->AddTool(ID::ToolButtonNew, "Redo", wxBitmap(wxSize(30, 30)));
+	m_toolBar->Realize();
+	
+}
+
+inline void cMain::InitMainPanel(wxFrame *_frame)
+{
+	m_middlePanel = new wxPanel(_frame, ID::MiddlePanel);
+	m_middlePanel->SetBackgroundColour(Colors::window_bg);
+
+	m_canvasPanel = new wxPanel(m_middlePanel, ID::CanvasPanel);
+	m_canvasPanel->SetBackgroundColour(Colors::canvas_bg);
+	
+	m_optionsPanel = new wxPanel(m_middlePanel, ID::OptionsPanel);
+	m_optionsPanel->SetBackgroundColour(Colors::primary_bg);
+	m_toolbarOpen = new wxButton(m_optionsPanel, wxID_ANY, "Options panel");
+}
+
+inline void cMain::InitTimelinePanel(wxFrame *_frame)
+{
+	m_timelinePanel = new wxPanel(_frame, ID::TimelinePanel);
+	m_timelinePanel->SetBackgroundColour(Colors::primary_fg);
+	m_toolbarSave = new wxButton(m_timelinePanel, wxID_ANY, "Timeline panel");
+}
+
+inline void cMain::SetSpacings()
+{
+	//	Flags: Proportion determines sizer major axis stretching
+	//	wxEXPAND / wxFIXED_MINSIZE determine sizer minor axis stretching
+	//	wxTOP, wxBOTTOM, wxLEFT, wxRIGHT, wxALL determine borders
+	wxBoxSizer *SpacerMain = new wxBoxSizer(wxVERTICAL);
+	SpacerMain->Add(m_toolbarPanel, 0, wxEXPAND);
+	SpacerMain->Add(m_middlePanel, 1, wxEXPAND | wxTOP | wxBOTTOM, 2);
+	SpacerMain->Add(m_timelinePanel, 0, wxEXPAND);
+	this->SetSizer(SpacerMain);
+	
+	wxBoxSizer *SpacerMiddle = new wxBoxSizer(wxHORIZONTAL);
+	SpacerMiddle->Add(m_canvasPanel, 1, wxEXPAND);
+	SpacerMiddle->Add(m_optionsPanel, 0, wxEXPAND | wxLEFT, 2);
+	m_middlePanel->SetSizer(SpacerMiddle);
 }
 
 //
@@ -107,22 +173,18 @@ void cMain::OnEditPrefs(wxCommandEvent &evt)
 
 void cMain::OnToolBrush(wxCommandEvent &evt)
 {
-
 }
 
 void cMain::OnToolEraser(wxCommandEvent &evt)
 {
-
 }
 
 void cMain::OnToolShading(wxCommandEvent &evt)
 {
-
 }
 
 void cMain::OnToolFill(wxCommandEvent &evt)
 {
-
 }
 
 void cMain::OnHelpShortcuts(wxCommandEvent &evt)
