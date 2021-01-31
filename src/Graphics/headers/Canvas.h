@@ -4,8 +4,8 @@
 #pragma once
 
 
-
-class Canvas {
+class Canvas
+{
 
 };
 

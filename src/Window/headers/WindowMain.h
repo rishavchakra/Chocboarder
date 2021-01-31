@@ -12,12 +12,12 @@
 
 #include "misc/values.hpp"
 
-class cMain : public wxFrame
+class WindowMain : public wxFrame
 {
 public:
-	cMain();
+	WindowMain();
 	
-	~cMain();
+	~WindowMain();
 
 //	Adding UI components
 public:
@@ -26,6 +26,7 @@ public:
 	wxPanel *m_toolbarPanel = nullptr;
 	wxPanel *m_middlePanel = nullptr;
 	wxPanel *m_canvasPanel = nullptr;
+	wxPanel *m_brushesPanel = nullptr;
 	wxPanel *m_optionsPanel = nullptr;
 	wxPanel *m_timelinePanel = nullptr;
 	
@@ -35,6 +36,7 @@ public:
 	wxToolBarToolBase *m_toolButtonSave = nullptr;
 	
 	wxPanel *m_toolbarPanelLeft = nullptr;
+	wxButton *m_toolbarNew = nullptr;
 	wxButton *m_toolbarOpen = nullptr;
 	wxButton *m_toolbarSave = nullptr;
 	

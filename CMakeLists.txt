@@ -17,32 +17,34 @@ endif()
 
 #[[         Setting source file lists          ]]
 set(graphics_source
-		)
+		src/Graphics/Canvas.cpp
+		src/Graphics/Tools.cpp)
 set(graphics_headers
-		)
+		src/Graphics/headers/Canvas.h
+		src/Graphics/headers/Tools.h)
 
 set(window_source
-		src/Window/cApp.cpp
-		src/Window/cMain.cpp
+		src/Window/App.cpp
+		src/Window/WindowMain.cpp
 		)
 set(window_headers
-		src/Window/headers/cApp.h
-		src/Window/headers/cMain.h)
+		src/Window/headers/App.h
+		src/Window/headers/WindowMain.h)
 
 set(additional_dependencies
 #		lib/GLAD/src/glad.c
 		
 		src/misc/values.hpp
-		)
+		src/Window/Functions.cpp)
 
 #[[         Adding executables          ]]
 add_executable(Chocboarder WIN32
-#		${graphics_source}
-#		${graphics_headers}
-#
+		${graphics_source}
+		${graphics_headers}
+
 		${window_source}
 		${window_headers}
-#
+
 		${additional_dependencies}
 		)
 

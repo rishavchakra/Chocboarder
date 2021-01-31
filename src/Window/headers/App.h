@@ -4,16 +4,16 @@
 #pragma once
 
 #include "wx/wx.h"
-#include "cMain.h"
+#include "WindowMain.h"
 #include "misc/values.hpp"
 
-class cApp : public wxApp {
+class App : public wxApp {
 public:
-	cApp();
-	~cApp();
+	App();
+	~App();
 	virtual bool OnInit();
 
 private:
-	cMain *m_main = nullptr;
+	WindowMain *m_main = nullptr;
 };
 

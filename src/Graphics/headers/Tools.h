@@ -4,8 +4,17 @@
 #pragma once
 
 
-class Tools
-{
+#include <vector>
+#include <string.h>
 
+class Tools {
+	
+	
+	enum Brushes
+	{
+		Sketch = 0,
+		Ink,
+		Eraser,
+		Fill
+	};
 };
-

@@ -1,20 +1,20 @@
 //
 // Created on Jan 29, 2021.
 //
-#include "headers/cApp.h"
+#include "Window/headers/App.h"
 
-wxIMPLEMENT_APP(cApp);
+wxIMPLEMENT_APP(App);
 
-cApp::cApp() {
-
-}
-
-cApp::~cApp() {
+App::App() {
 
 }
 
-bool cApp::OnInit() {
-	m_main = new cMain();
+App::~App() {
+
+}
+
+bool App::OnInit() {
+	m_main = new WindowMain();
 	m_main->SetBackgroundColour(Colors::window_bg);
 	m_main->Show();
 	SetTopWindow(m_main);
