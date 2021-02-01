@@ -27,6 +27,8 @@ WindowMain::WindowMain() :
 		wxFrame(nullptr, wxID_ANY, "ChocBoarder", wxPoint(30, 30), wxSize(1920, 1080))
 {
 	//	Initializes all the window components
+	if (this == nullptr)
+		std::cout << "Well. This is a problem" << std::endl;
 	InitMenu(this);
 	InitToolbar(this);
 	InitMainPanel(this);
@@ -118,21 +120,26 @@ inline void WindowMain::InitToolbar(wxFrame *_frame)
 
 inline void WindowMain::InitMainPanel(wxFrame *_frame)
 {
-	m_middlePanel = new wxPanel(_frame, ID::MiddlePanel);
-	m_middlePanel->SetBackgroundColour(Colors::window_bg);
-	
-	m_canvasPanel = new wxPanel(m_middlePanel, ID::CanvasPanel);
+	m_middleSectionPanel = new wxPanel(_frame, ID::MiddlePanel);
+	m_middleSectionPanel->SetBackgroundColour(Colors::window_bg);
+
+	m_brushesPanel = new wxPanel(m_middleSectionPanel, ID::BrushPanel);
+	m_brushesPanel->SetBackgroundColour(Colors::primary_bg);
+
+	m_canvasPanel = new wxPanel(m_middleSectionPanel, ID::CanvasPanel);
 	m_canvasPanel->SetBackgroundColour(Colors::canvas_bg);
 	
-	m_optionsPanel = new wxPanel(m_middlePanel, ID::OptionsPanel);
-	m_optionsPanel->SetBackgroundColour(Colors::primary_bg);
-	m_toolbarOpen = new wxButton(m_optionsPanel, wxID_ANY, "Options panel");
+	m_optionSectionPanel = new wxPanel(m_middleSectionPanel, ID::OptionsPanel);
+	m_optionSectionPanel->SetBackgroundColour(Colors::primary_bg);
 }
 
 inline void WindowMain::InitTimelinePanel(wxFrame *_frame)
 {
-	m_timelinePanel = new wxPanel(_frame, ID::TimelinePanel);
-	m_timelinePanel->SetBackgroundColour(Colors::primary_fg);
+	m_timelineSectionPanel = new wxPanel(_frame, ID::TimelineSectionPanel);
+	m_timelineSectionPanel->SetBackgroundColour(Colors::primary_fg);
+
+	m_timelineControlPanel = new wxPanel(m_timelineSectionPanel, ID::TimelineControlPanel);
+	m_timelinePanel = new wxPanel(m_timelineSectionPanel, ID::TimelinePanel);
 }
 
 inline void WindowMain::SetSpacings()
@@ -142,8 +149,8 @@ inline void WindowMain::SetSpacings()
 	//	wxTOP, wxBOTTOM, wxLEFT, wxRIGHT, wxALL determine borders
 	wxBoxSizer *SpacerMain = new wxBoxSizer(wxVERTICAL);
 	SpacerMain->Add(m_toolbarPanel, 0, wxEXPAND);
-	SpacerMain->Add(m_middlePanel, 1, wxEXPAND | wxTOP | wxBOTTOM, 2);
-	SpacerMain->Add(m_timelinePanel, 0, wxEXPAND);
+	SpacerMain->Add(m_middleSectionPanel, 1, wxEXPAND | wxTOP | wxBOTTOM, 2);
+	SpacerMain->Add(m_timelineSectionPanel, 0, wxEXPAND);
 	this->SetSizer(SpacerMain);
 	
 	wxBoxSizer *SpacerToolbar = new wxBoxSizer(wxHORIZONTAL);
@@ -151,13 +158,19 @@ inline void WindowMain::SetSpacings()
 	m_toolbarPanel->SetSizer(SpacerToolbar);
 	
 	wxBoxSizer *SpacerMiddle = new wxBoxSizer(wxHORIZONTAL);
-	SpacerMiddle->Add(m_canvasPanel, 1, wxEXPAND);
-	SpacerMiddle->Add(m_optionsPanel, 0, wxEXPAND | wxLEFT, 2);
-	m_middlePanel->SetSizer(SpacerMiddle);
-	
+	SpacerMiddle->Add(m_brushesPanel, 0, wxEXPAND);
+	SpacerMiddle->Add(m_canvasPanel, 1, wxEXPAND | wxLEFT | wxRIGHT, 2);
+	SpacerMiddle->Add(m_optionSectionPanel, 0, wxEXPAND);
+	m_middleSectionPanel->SetSizer(SpacerMiddle);
+
+	wxBoxSizer *SpacerTimelineSections = new wxBoxSizer(wxVERTICAL);
+	SpacerTimelineSections->Add(m_timelineControlPanel, 0, wxEXPAND);
+	SpacerTimelineSections->Add(m_timelinePanel, 1, wxEXPAND);
+	m_timelineSectionPanel->SetSizer(SpacerTimelineSections);
+
 	wxBoxSizer *SpacerTimelineControl = new wxBoxSizer(wxHORIZONTAL);
-	SpacerMiddle->AddStretchSpacer();
-//	SpacerMiddle->Add
-	SpacerMiddle->AddStretchSpacer();
+	SpacerTimelineControl->AddStretchSpacer();
+//	SpacerTimelineControl->Add
+	SpacerTimelineControl->AddStretchSpacer();
 	m_timelineControlPanel->SetSizer(SpacerTimelineControl);
 }

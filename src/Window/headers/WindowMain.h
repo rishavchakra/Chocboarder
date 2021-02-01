@@ -24,11 +24,11 @@ public:
 	wxMenuBar *m_menuBar = nullptr;
 	
 	wxPanel *m_toolbarPanel = nullptr;
-	wxPanel *m_middlePanel = nullptr;
+	wxPanel *m_middleSectionPanel = nullptr;
 	wxPanel *m_canvasPanel = nullptr;
 	wxPanel *m_brushesPanel = nullptr;
-	wxPanel *m_optionsPanel = nullptr;
-	wxPanel *m_timelinePanel = nullptr;
+	wxPanel *m_optionSectionPanel = nullptr;
+	wxPanel *m_timelineSectionPanel = nullptr;
 	
 	wxToolBar *m_toolBar = nullptr;
 	wxToolBarToolBase *m_toolButtonNew = nullptr;
@@ -49,6 +49,7 @@ public:
 	
 	//Timeline
 	//Add timeline component here
+	wxPanel *m_timelinePanel = nullptr;
 	wxPanel *m_timelineControlPanel = nullptr;
 	
 	void InitMenu(wxFrame *);

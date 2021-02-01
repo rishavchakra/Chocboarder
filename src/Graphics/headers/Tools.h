@@ -4,9 +4,6 @@
 #pragma once
 
 
-#include <vector>
-#include <string.h>
-
 class Tools {
 	
 	

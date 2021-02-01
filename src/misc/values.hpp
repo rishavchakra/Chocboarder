@@ -39,6 +39,7 @@ enum ID
 	OptionsPanel,
 	Options,
 
+	TimelineSectionPanel,
 	TimelinePanel,
 	TimelineControlPanel,
 	Timeline,
