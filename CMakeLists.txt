@@ -17,25 +17,30 @@ endif()
 
 #[[         Setting source file lists          ]]
 set(graphics_source
-		src/Graphics/Canvas.cpp
-		src/Graphics/Tools.cpp)
+src/Graphics/Tools.cpp
+src/Graphics/Image.cpp
+)
 set(graphics_headers
-		src/Graphics/headers/Canvas.h
-		src/Graphics/headers/Tools.h)
+src/Graphics/headers/Tools.h
+src/Graphics/headers/Image.h
+)
 
 set(window_source
-		src/Window/App.cpp
-		src/Window/WindowMain.cpp
-		)
+src/GUI/App.cpp
+src/GUI/WindowMain.cpp
+src/GUI/Canvas.cpp
+)
 set(window_headers
-		src/Window/headers/App.h
-		src/Window/headers/WindowMain.h)
+src/GUI/headers/App.h
+src/GUI/headers/WindowMain.h
+src/GUI/headers/Canvas.h
+)
 
 set(additional_dependencies
 #		lib/GLAD/src/glad.c
 		
-		src/misc/values.hpp
-		src/Window/Functions.cpp)
+		src/glob/values.hpp
+		src/GUI/Functions.cpp)
 
 #[[         Adding executables          ]]
 add_executable(Chocboarder WIN32
@@ -57,6 +62,7 @@ set(BUILD_GLFW false)
 set(BUILD_GLEW false)
 set(BUILD_WX true)
 
+#[[
 #           GLFW OpenGL Framework
 if(BUILD_GLFW)
 	DBG_SAY("Building GLFW OpenGL library from source...")
@@ -91,6 +97,7 @@ if(BUILD_GLEW)
 else(BUILD_GLEW)
 	DBG_SAY("Not building GLEW OpenGL Extension Library, may cause errors")
 endif(BUILD_GLEW)
+]]
 
 #           wxWidgets GUI library
 if(BUILD_WX)

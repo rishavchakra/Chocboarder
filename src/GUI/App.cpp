@@ -1,7 +1,7 @@
 //
 // Created on Jan 29, 2021.
 //
-#include "Window/headers/App.h"
+#include "headers/App.h"
 
 wxIMPLEMENT_APP(App);
 

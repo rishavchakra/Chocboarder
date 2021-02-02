@@ -10,7 +10,7 @@
 
 #endif
 
-#include "misc/values.hpp"
+#include "glob/values.hpp"
 
 class WindowMain : public wxFrame
 {

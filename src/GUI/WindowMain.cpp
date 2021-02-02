@@ -1,7 +1,7 @@
 //
 // Created on Jan 29, 2021.
 //
-#include "Window/headers/WindowMain.h"
+#include "headers/WindowMain.h"
 
 //Binds IDs to command functions
 wxBEGIN_EVENT_TABLE(WindowMain, wxFrame)

@@ -5,7 +5,7 @@
 
 #include "wx/wx.h"
 #include "WindowMain.h"
-#include "misc/values.hpp"
+#include "glob/values.hpp"
 
 class App : public wxApp {
 public:
