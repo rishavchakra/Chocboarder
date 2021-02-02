@@ -6,5 +6,8 @@ Chocboarder is (will be) a program for creating storyboards and animatics.
 ## Dependencies
 * wxWidgets GUI
 * SDL Graphics (not yet, but most likely)
+* If not SDL, then GLEW OpenGL
 
-wxWidgets is linked externally through CMake, so if it's not building properly the FindwxWidgets.cmake file in the CMake shared directory should be changed to accommodate your wxWidgets installation directory.
+wxWidgets is linked externally through CMake, so there are a couple of ways to fix it. 
+* Try setting an environment variable called WXWIN, which should be recognized by the wxWidgets CMake module. 
+* If not, find the FindwxWidgets.cmake file in the CMake shared directory and change it to accommodate your wxWidgets installation directory. (I don't think this second option is a good idea, but if nothing else, it works)
