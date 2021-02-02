@@ -19,10 +19,14 @@ endif()
 set(graphics_source
 src/Graphics/Tools.cpp
 src/Graphics/Image.cpp
+src/Graphics/Frame.cpp
+src/Graphics/Sequence.cpp
 )
 set(graphics_headers
 src/Graphics/headers/Tools.h
 src/Graphics/headers/Image.h
+src/Graphics/headers/Frame.h
+src/Graphics/headers/Sequence.h
 )
 
 set(window_source
