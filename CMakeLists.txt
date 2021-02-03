@@ -19,12 +19,14 @@ endif()
 set(graphics_source
 src/Graphics/Tools.cpp
 src/Graphics/Image.cpp
+src/Graphics/RasterImg.cpp
 src/Graphics/Frame.cpp
 src/Graphics/Sequence.cpp
 )
 set(graphics_headers
 src/Graphics/headers/Tools.h
 src/Graphics/headers/Image.h
+src/Graphics/headers/RasterImg.h
 src/Graphics/headers/Frame.h
 src/Graphics/headers/Sequence.h
 )
@@ -63,19 +65,15 @@ include_directories(src)
 #[[         External libraries          ]]
 
 #           wxWidgets GUI library
-if(BUILD_WX)
-	DBG_SAY("Building wxWidgets GUI library...")
+DBG_SAY("Building wxWidgets GUI library...")
 	
-	set(wxWidgets_CONFIGURATION mswd)
-	set(wxWidgets_USE_STATIC ON)
-	find_package(wxWidgets COMPONENTS gl core base REQUIRED)
-	if(wxWidgets_FOUND)
-		include(${wxWidgets_USE_FILE})
-		target_link_libraries(Chocboarder ${wxWidgets_LIBRARIES})
-	else(wxWidgets_FOUND)
-		message(FATAL_ERROR "wxWidgets not found!
-		Fix FindwxWidgets.cmake in [CMake]/share/cmakeXXX/Modules. Add filepaths to wxwidgets include, library, and root in the PATHS of any find_path()")
-	endif(wxWidgets_FOUND)
-else(BUILD_WX)
-	DBG_SAY("Not building wxWidgets GUI library, may cause errors")
-endif(BUILD_WX)
+set(wxWidgets_CONFIGURATION mswd)
+set(wxWidgets_USE_STATIC ON)
+find_package(wxWidgets COMPONENTS gl core base REQUIRED)
+if(wxWidgets_FOUND)
+	include(${wxWidgets_USE_FILE})
+	target_link_libraries(Chocboarder ${wxWidgets_LIBRARIES})
+else(wxWidgets_FOUND)
+	message(FATAL_ERROR "wxWidgets not found!
+	Fix FindwxWidgets.cmake in [CMake]/share/cmakeXXX/Modules. Add filepaths to wxwidgets include, library, and root in the PATHS of any find_path()")
+endif(wxWidgets_FOUND)

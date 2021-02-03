@@ -11,6 +11,6 @@ Frame::Frame() {
     m_frameDesc = "No Description";
     
     m_isNewScene = false;
-    m_sceneNum = 0; // Fix this later
-    m_shotNum = 0; //Fix this too
+    m_sceneNum = 1; // Fix this later
+    m_shotNum = 1; //Fix this too
 }

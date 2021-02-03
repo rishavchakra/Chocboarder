@@ -5,7 +5,7 @@
 #include "headers/Sequence.h"
 
 Sequence::Sequence() {
-    // m_frameSequence = new std::vector<Frame>();
+    
 }
 
 Sequence::~Sequence() {
