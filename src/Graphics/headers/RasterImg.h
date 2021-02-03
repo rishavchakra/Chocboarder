@@ -10,7 +10,7 @@ public:
     RasterImg();
     ~RasterImg();
 
-public:
+// public:
 
     // Try using glTexImage2D?
         // Probably a much better idea to use glTexImage2D instead of array of colors

@@ -3,3 +3,10 @@
 //
 #include "headers/Image.h"
 
+Image::Image() {
+
+}
+
+Image::~Image() {
+    
+}

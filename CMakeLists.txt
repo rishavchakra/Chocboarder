@@ -43,7 +43,7 @@ src/GUI/headers/Canvas.h
 )
 
 set(additional_dependencies
-#		lib/GLAD/src/glad.c
+		lib/GLAD/src/glad.c
 		
 		src/glob/values.hpp
 		src/GUI/Functions.cpp)
@@ -61,6 +61,7 @@ add_executable(Chocboarder WIN32
 
 #Include project directories
 include_directories(src)
+include_directories(lib/GLAD/include)
 
 #[[         External libraries          ]]
 
