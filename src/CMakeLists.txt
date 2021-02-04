@@ -43,26 +43,3 @@ target_link_libraries(Chocboarder PUBLIC GLAD)
 
 #Include project directories
 include_directories(${CMAKE_CURRENT_SOURCE_DIR})
-
-
-#[[         External libraries          ]]
-
-#           wxWidgets GUI library
-#[[
-DBG_SAY("Starting Building wxWidgets GUI library...")
-
-set(wxWidgets_CONFIGURATION mswd)
-set(wxWidgets_USE_STATIC ON)
-DBG_SAY("Starting search for wxWidgets")
-find_package(wxWidgets COMPONENTS gl core base REQUIRED)
-if(wxWidgets_FOUND)
-	DBG_SAY("Found wxWidgets")
-	include(${wxWidgets_USE_FILE})
-	target_link_libraries(Chocboarder ${wxWidgets_LIBRARIES})
-else(wxWidgets_FOUND)
-	message(FATAL_ERROR "wxWidgets not found!
-	Fix FindwxWidgets.cmake in [CMake]/share/cmakeXXX/Modules. Add file paths to wxWidgets include, library, and root in the PATHS of any find_path()")
-endif(wxWidgets_FOUND)
-
-DBG_SAY("Built wxWidgets")
-]]

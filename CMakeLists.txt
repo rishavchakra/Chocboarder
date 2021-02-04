@@ -17,7 +17,6 @@ endif()
 
 
 #Adding project and library subdirectories
-add_subdirectory(lib/GLAD)
 
 add_subdirectory(src)
 
@@ -25,14 +24,14 @@ add_subdirectory(src)
 #[[         External libraries          ]]
 
 #           wxWidgets GUI library
-CHOC_DBG("Building wxWidgets GUI library...")
+CHOC_DBG("Linking wxWidgets GUI library...")
 
 set(wxWidgets_CONFIGURATION mswu)
 set(wxWidgets_USE_STATIC ON)
 set(WX_VERBOSE false)
 find_package(wxWidgets COMPONENTS gl core base)
-CHOC_DBG("wxWidgets find successful: ${wxWidgets_FOUND}")
 if(wxWidgets_FOUND)
+	CHOC_DBG("wxWidgets linking successful")
 	target_include_directories(Chocboarder PUBLIC ${wxWidgets_INCLUDE_DIRS})
 	target_link_libraries(Chocboarder PUBLIC ${wxWidgets_LIBRARIES})
 else(wxWidgets_FOUND)
@@ -40,5 +39,20 @@ else(wxWidgets_FOUND)
 	Fix FindwxWidgets.cmake in [CMake]/share/cmakeXXX/Modules. /
 	Add file paths to wxWidgets include, library, and root in the PATHS of any find_path()")
 endif(wxWidgets_FOUND)
+
+
+#			GLEW OpenGL library
+CHOC_DBG("Linking GLEW OpenGL library...")
+
+set(GLEW_VERBOSE false)
+find_package(GLEW)
+if(GLEW_FOUND)
+	CHOC_DBG("GLEW linking successful")
+	target_include_directories(Chocboarder PUBLIC ${GLEW_INCLUDE_DIRS})
+	target_link_libraries(Chocboarder PUBLIC ${GLEW_STATIC_LIBRARIES})
+else(GLEW_FOUND)
+	message("GLEW not found!
+	Fix FindGLEW.cmake in [CMake]/share/cmakeXXX/Modules.")
+endif(GLEW_FOUND)
 
 CHOC_DBG("Finished building CMake modules")
