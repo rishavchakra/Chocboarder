@@ -1,7 +1,6 @@
 #[[         Setting source file lists          ]]
 set(graphics_source
 		Graphics/Tools.cpp
-		Graphics/Image.cpp
 		Graphics/RasterImg.cpp
 		Graphics/Frame.cpp
 		Graphics/Sequence.cpp

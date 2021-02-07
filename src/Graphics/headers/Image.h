@@ -10,16 +10,17 @@
 class Image
 {
 public:
-    Image();
-    ~Image();
-    // Vector libraries: Look for Cairo, OpenVG (Khronos group), or ShivaVG
-    // Raster libraries: GLEW? SDL, if I can get that to work? plain OpenGL?
+	Image();
+	~Image();
+	// Vector libraries: Look for Cairo, OpenVG (Khronos group), or ShivaVG
+	// Raster libraries: GLEW? SDL, if I can get that to work? plain OpenGL?
 
-    // Drawing: Create a single buffered window, don't clear the front buffer
-    // Then: Draw to frame buffer-attached texture so window movement doesn't
-    // destroy the drawing
-    // Set viewport->window size, ortho projection to window bounds, no glClear
+	// Drawing: Create a single buffered window, don't clear the front buffer
+	// Then: Draw to frame buffer-attached texture so window movement doesn't
+	// destroy the drawing
+	// Set viewport->window size, ortho projection to window bounds, no glClear
 
-    // hxrender?
+	virtual int draw();
+	// hxrender?
 };
 
