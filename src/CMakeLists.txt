@@ -38,7 +38,7 @@ add_executable(Chocboarder WIN32
 		${additional_dependencies}
 		)
 
-target_link_libraries(Chocboarder PUBLIC GLAD)
+# target_link_libraries(Chocboarder PUBLIC GLAD)
 
 #Include project directories
 include_directories(${CMAKE_CURRENT_SOURCE_DIR})

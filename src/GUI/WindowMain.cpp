@@ -133,6 +133,13 @@ inline void WindowMain::InitMainPanel(wxFrame *_frame)
 	m_optionSectionPanel->SetBackgroundColour(Colors::primary_bg);
 }
 
+inline void WindowMain::InitCanvas(wxFrame *_frame)
+{
+	m_canvas = new glCanvas(_frame);
+	m_glContext = new wxGLContext(m_canvas);
+	m_glContext->SetCurrent((wxGLCanvas)m_canvas);
+}
+
 inline void WindowMain::InitTimelinePanel(wxFrame *_frame)
 {
 	m_timelineSectionPanel = new wxPanel(_frame, ID::TimelineSectionPanel);

@@ -4,6 +4,7 @@
 #pragma once
 
 #include "wx/colour.h"
+#include "wx/gdicmn.h"
 
 //wxIDs for all buttons and commands
 enum ID

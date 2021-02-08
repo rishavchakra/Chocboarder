@@ -3,14 +3,10 @@
 //
 #pragma once
 
-#ifndef WX_INCLUDED
-#define WX_INCLUDED
+#include "Canvas.h"
+#include "glob/values.hpp"
 
 #include "wx/wx.h"
-
-#endif
-
-#include "glob/values.hpp"
 
 class WindowMain : public wxFrame
 {
@@ -29,7 +25,10 @@ public:
 	wxPanel *m_brushesPanel = nullptr;
 	wxPanel *m_optionSectionPanel = nullptr;
 	wxPanel *m_timelineSectionPanel = nullptr;
-	
+
+	glCanvas *m_canvas = nullptr;
+	wxGLContext *m_glContext = nullptr;
+
 	wxToolBar *m_toolBar = nullptr;
 	wxToolBarToolBase *m_toolButtonNew = nullptr;
 	wxToolBarToolBase *m_toolButtonOpen = nullptr;
@@ -55,6 +54,7 @@ public:
 	void InitMenu(wxFrame *);
 	void InitToolbar(wxFrame *);
 	void InitMainPanel(wxFrame *);
+	void InitCanvas(wxFrame *);
 	void InitTimelinePanel(wxFrame *);
 	
 	void SetSpacings();

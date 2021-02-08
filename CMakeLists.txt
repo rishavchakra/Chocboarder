@@ -44,7 +44,8 @@ endif(wxWidgets_FOUND)
 #			GLEW OpenGL library
 CHOC_DBG("Linking GLEW OpenGL library...")
 
-set(GLEW_VERBOSE false)
+set(GLEW_VERBOSE true)
+set(GLEW_USE_STATIC_LIBS true)
 find_package(GLEW)
 if(GLEW_FOUND)
 	CHOC_DBG("GLEW linking successful")

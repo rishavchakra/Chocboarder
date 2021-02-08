@@ -12,3 +12,7 @@ RasterImg::RasterImg() {
 RasterImg::~RasterImg() {
 	glDeleteFramebuffers(1, &m_imgBuffer);
 }
+
+int RasterImg::draw() {
+	return 0;
+}

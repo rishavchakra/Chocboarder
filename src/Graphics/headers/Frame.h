@@ -5,6 +5,7 @@
 
 
 #include "Image.h"
+#include "RasterImg.h"
 // Frames contain all the data for a single frame of an animatic
 // including the image itself and any script-related information
 // about it.

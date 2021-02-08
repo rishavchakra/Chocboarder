@@ -5,7 +5,9 @@
 
 #include "Image.h"
 
+#define GLEW_STATIC
 #include "gl/glew.h"
+#include "wx/wx.h"
 
 class RasterImg : public Image {
 public:
@@ -14,6 +16,9 @@ public:
 
 public:
 	GLuint m_imgBuffer;
+
+public:
+	int draw() override;
 
 	// Try using glTexImage2D?
 		// Probably a much better idea to use glTexImage2D instead of array of colors

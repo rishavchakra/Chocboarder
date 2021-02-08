@@ -5,7 +5,7 @@
 #include "headers/Frame.h"
 
 Frame::Frame() {
-    m_frameImage = new Image();
+    m_frameImage = new RasterImg();
     // Todo: Make the name of the frame from the scene/shot numbers
     m_frameName = "Frame";
     m_frameDesc = "No Description";

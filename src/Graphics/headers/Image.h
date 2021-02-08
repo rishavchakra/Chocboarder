@@ -10,8 +10,6 @@
 class Image
 {
 public:
-	Image();
-	~Image();
 	// Vector libraries: Look for Cairo, OpenVG (Khronos group), or ShivaVG
 	// Raster libraries: GLEW? SDL, if I can get that to work? plain OpenGL?
 
@@ -20,7 +18,7 @@ public:
 	// destroy the drawing
 	// Set viewport->window size, ortho projection to window bounds, no glClear
 
-	virtual int draw();
+	virtual int draw() = 0;
 	// hxrender?
 };
 
